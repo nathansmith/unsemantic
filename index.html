@@ -3,9 +3,15 @@
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
-<meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport' />
+<meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" name="viewport" />
 <title>Unsemantic CSS Framework</title>
 <link rel="stylesheet" href="./assets/stylesheets/application.css" />
+<!--[if (gt IE 8) | (IEMobile)]><!-->
+  <link rel="stylesheet" href="./assets/stylesheets/unsemantic-grid-responsive.css" />
+<!--<![endif]-->
+<!--[if (lt IE 9) & (!IEMobile)]>
+  <link rel="stylesheet" href="./assets/stylesheets/ie.css" />
+<![endif]-->
 </head>
 <body>
   <div class="container">

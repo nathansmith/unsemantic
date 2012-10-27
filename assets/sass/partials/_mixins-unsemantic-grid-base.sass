@@ -66,8 +66,8 @@ $gutter-half: 10px
 
 %grid-columns-all
   +box-sizing(border-box)
-  padding-left: 10px
-  padding-right: 10px
+  padding-left: $gutter-half
+  padding-right: $gutter-half
 
   // <Begin IE7 tweaks>
   //
@@ -78,7 +78,7 @@ $gutter-half: 10px
   //
   // [2] Adjust for possible rounding errors,
   //     pulling the adjacent sibling closer.
-  *margin-right: -1px
+  *margin-#{$lang-dir}: -1px
   //
   // [3] Fake what would normally be padding,
   //     for browsers that support box-sizing.

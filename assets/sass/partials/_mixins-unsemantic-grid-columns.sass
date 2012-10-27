@@ -17,7 +17,7 @@
 //----------------------------------------------------------------------------------------------------
 
 %grid-columns
-  float: left
+  float: $lang-dir
 
 //
 // For 5 through 95 percent.
@@ -31,16 +31,16 @@
     width: percentage($num / 100)
 
   %prefix-#{$num}
-    margin-left: percentage($num / 100)
+    margin-#{$lang-dir}: percentage($num / 100)
 
   %suffix-#{$num}
-    margin-right: percentage($num / 100)
+    margin-#{$lang-rev}: percentage($num / 100)
 
   %push-#{$num}
-    left: percentage($num / 100)
+    #{$lang-dir}: percentage($num / 100)
 
   %pull-#{$num}
-    left: percentage($num / 100) * -1
+    #{$lang-dir}: percentage($num / 100) * -1
 
 //
 // For one-third and two-thirds.
@@ -59,18 +59,18 @@
 
   // Prefix, to add extra columns before.
   %prefix-#{$num}
-    margin-left: percentage($precise / 100)
+    margin-#{$lang-dir}: percentage($precise / 100)
 
   // Suffix, to add extra columns after.
   %suffix-#{$num}
-    margin-right: percentage($precise / 100)
+    margin-#{$lang-rev}: percentage($precise / 100)
 
   // Push & Pull, to rearrange column order (for potential "SEO").
   %push-#{$num}
-    left: percentage($precise / 100)
+    #{$lang-dir}: percentage($precise / 100)
 
   %pull-#{$num}
-    left: percentage($precise / 100) * -1
+    #{$lang-dir}: percentage($precise / 100) * -1
 
 //
 // Full width, just line-break.
