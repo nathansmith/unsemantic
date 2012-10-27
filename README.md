@@ -11,6 +11,8 @@ The one that uses `@media` queries serves a desktop width site to IE7 and IE8, b
 
 **Notes:**
 
+Supports right-to-left languages (such as Arabic, Hebrew). Just use the `rtl-*` prefixed CSS file(s). This reverses all left/right floats and offsets. `.push-*` goes right, instead of left, etc.
+
 Currently, there is one break point, at 760px. All styles are defined using Sass silent mixins. This means you can choose not to use the "unsemantic" class names, and can instead `@extend` into your own.
 
 Documentation will be forthcoming. For now, I wanted to get this out there, so people could pick it apart and use it as a learning tool for how Sass handles silent mixins.
