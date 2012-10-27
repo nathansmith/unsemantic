@@ -1,0 +1,65 @@
+@import "mixins-unsemantic-grid-columns"
+
+// `Hide on desktop.
+//----------------------------------------------------------------------------------------------------
+
+.hide-on-desktop
+  @extend %hide
+
+// `Grid columns.
+//----------------------------------------------------------------------------------------------------
+
+//
+// For 5 through 95 percent.
+//
+
+@for $i from 1 through 19
+  $num: $i * 5
+
+  .width-#{$num}
+    @extend %width-#{$num}
+
+  .prefix-#{$num}
+    @extend %prefix-#{$num}
+
+  .suffix-#{$num}
+    @extend %suffix-#{$num}
+
+  .push-#{$num}
+    @extend %push-#{$num}
+
+  .pull-#{$num}
+    @extend %pull-#{$num}
+
+//
+// For one-third and two-thirds.
+//
+
+@for $i from 1 through 2
+  $num: $i * 33
+
+  // Percentage based widths.
+  .width-#{$num}
+    @extend %width-#{$num}
+
+  // Prefix, to add extra columns before.
+  .prefix-#{$num}
+    @extend %prefix-#{$num}
+
+  // Suffix, to add extra columns after.
+  .suffix-#{$num}
+    @extend %suffix-#{$num}
+
+  // Push & Pull, to rearrange column order (for potential "SEO").
+  .push-#{$num}
+    @extend %push-#{$num}
+
+  .pull-#{$num}
+    @extend %pull-#{$num}
+
+//
+// Full width, just line-break.
+//
+
+.width-100
+  @extend %width-100

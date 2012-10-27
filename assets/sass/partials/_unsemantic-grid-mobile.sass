@@ -1,0 +1,65 @@
+@import "mixins-unsemantic-grid-columns"
+
+// `Hide on mobile.
+//----------------------------------------------------------------------------------------------------
+
+.hide-on-mobile
+  @extend %hide
+
+// `Grid columns.
+//----------------------------------------------------------------------------------------------------
+
+//
+// For 5 through 95 percent.
+//
+
+@for $i from 1 through 19
+  $num: $i * 5
+
+  .mobile-width-#{$num}
+    @extend %width-#{$num}
+
+  .pmobile-refix-#{$num}
+    @extend %prefix-#{$num}
+
+  .mobile-suffix-#{$num}
+    @extend %suffix-#{$num}
+
+  .mobile-push-#{$num}
+    @extend %push-#{$num}
+
+  .mobile-pull-#{$num}
+    @extend %pull-#{$num}
+
+//
+// For one-third and two-thirds.
+//
+
+@for $i from 1 through 2
+  $num: $i * 33
+
+  // Percentage based widths.
+  .mobile-width-#{$num}
+    @extend %width-#{$num}
+
+  // Prefix, to add extra columns before.
+  .mobile-prefix-#{$num}
+    @extend %prefix-#{$num}
+
+  // Suffix, to add extra columns after.
+  .mobile-suffix-#{$num}
+    @extend %suffix-#{$num}
+
+  // Push & Pull, to rearrange column order (for potential "SEO").
+  .mobile-push-#{$num}
+    @extend %push-#{$num}
+
+  .mobile-pull-#{$num}
+    @extend %pull-#{$num}
+
+//
+// Full width, just line-break.
+//
+
+.mobile-width-100
+  @extend %width-100

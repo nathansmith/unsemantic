@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ http://%1%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+Options -Indexes
+
+ErrorDocument 400 http://unsemantic.com/
+ErrorDocument 401 http://unsemantic.com/
+ErrorDocument 403 http://unsemantic.com/
+ErrorDocument 404 http://unsemantic.com/
+ErrorDocument 500 http://unsemantic.com/

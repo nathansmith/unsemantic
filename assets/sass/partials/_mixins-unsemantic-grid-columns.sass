@@ -1,0 +1,77 @@
+// These mixins are intended to be used from
+// within _unsemantic-grid-desktop.sass, but could
+// be used in your own stylesheet, via a class
+// name of your choice. You don't *have* to be
+// unsemantic. That's entirely up to you! :)
+
+// `Hide on desktop/mobile.
+//----------------------------------------------------------------------------------------------------
+
+%hide
+  display: none !important
+
+// `Grid columns.
+//----------------------------------------------------------------------------------------------------
+
+%grid-columns
+  float: left
+
+//
+// For 5 through 95 percent.
+//
+
+@for $i from 1 through 19
+  $num: $i * 5
+
+  %width-#{$num}
+    @extend %grid-columns
+    width: percentage($num / 100)
+
+  %prefix-#{$num}
+    margin-left: percentage($num / 100)
+
+  %suffix-#{$num}
+    margin-right: percentage($num / 100)
+
+  %push-#{$num}
+    left: percentage($num / 100)
+
+  %pull-#{$num}
+    left: percentage($num / 100) * -1
+
+//
+// For one-third and two-thirds.
+//
+
+@for $i from 1 through 2
+  $num: $i * 33
+  $one-third: 1/3
+  $decimal: $i * $one-third
+  $precise: $num + $decimal
+
+  // Percentage based widths.
+  %width-#{$num}
+    @extend %grid-columns
+    width: percentage($precise / 100)
+
+  // Prefix, to add extra columns before.
+  %prefix-#{$num}
+    margin-left: percentage($precise / 100)
+
+  // Suffix, to add extra columns after.
+  %suffix-#{$num}
+    margin-right: percentage($precise / 100)
+
+  // Push & Pull, to rearrange column order (for potential "SEO").
+  %push-#{$num}
+    left: percentage($precise / 100)
+
+  %pull-#{$num}
+    left: percentage($precise / 100) * -1
+
+//
+// Full width, just line-break.
+//
+
+%width-100
+  clear: both

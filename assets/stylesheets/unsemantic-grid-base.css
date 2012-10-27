@@ -1,0 +1,75 @@
+body {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:before,
+.clearfix:after,
+.container:before,
+.container:after,
+.width-100:before,
+.width-100:after,
+.mobile-width-100:before,
+.mobile-width-100:after {
+  content: ".";
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after,
+.container:after,
+.width-100:after,
+.mobile-width-100:after {
+  clear: both;
+}
+
+.clearfix,
+.container,
+.width-100,
+.mobile-width-100 {
+  zoom: 1;
+}
+
+.width-5, .mobile-width-5, .width-10, .mobile-width-10, .width-15, .mobile-width-15, .width-20, .mobile-width-20, .width-25, .mobile-width-25, .width-30, .mobile-width-30, .width-35, .mobile-width-35, .width-40, .mobile-width-40, .width-45, .mobile-width-45, .width-50, .mobile-width-50, .width-55, .mobile-width-55, .width-60, .mobile-width-60, .width-65, .mobile-width-65, .width-70, .mobile-width-70, .width-75, .mobile-width-75, .width-80, .mobile-width-80, .width-85, .mobile-width-85, .width-90, .mobile-width-90, .width-95, .mobile-width-95, .width-100, .mobile-width-100, .width-33, .mobile-width-33, .width-66, .mobile-width-66 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  *padding-left: 0;
+  *padding-right: 0;
+  *margin-right: -1px;
+}
+*:first-child + html .width-5 > *, *:first-child + html .mobile-width-5 > *, *:first-child + html .width-10 > *, *:first-child + html .mobile-width-10 > *, *:first-child + html .width-15 > *, *:first-child + html .mobile-width-15 > *, *:first-child + html .width-20 > *, *:first-child + html .mobile-width-20 > *, *:first-child + html .width-25 > *, *:first-child + html .mobile-width-25 > *, *:first-child + html .width-30 > *, *:first-child + html .mobile-width-30 > *, *:first-child + html .width-35 > *, *:first-child + html .mobile-width-35 > *, *:first-child + html .width-40 > *, *:first-child + html .mobile-width-40 > *, *:first-child + html .width-45 > *, *:first-child + html .mobile-width-45 > *, *:first-child + html .width-50 > *, *:first-child + html .mobile-width-50 > *, *:first-child + html .width-55 > *, *:first-child + html .mobile-width-55 > *, *:first-child + html .width-60 > *, *:first-child + html .mobile-width-60 > *, *:first-child + html .width-65 > *, *:first-child + html .mobile-width-65 > *, *:first-child + html .width-70 > *, *:first-child + html .mobile-width-70 > *, *:first-child + html .width-75 > *, *:first-child + html .mobile-width-75 > *, *:first-child + html .width-80 > *, *:first-child + html .mobile-width-80 > *, *:first-child + html .width-85 > *, *:first-child + html .mobile-width-85 > *, *:first-child + html .width-90 > *, *:first-child + html .mobile-width-90 > *, *:first-child + html .width-95 > *, *:first-child + html .mobile-width-95 > *, *:first-child + html .width-100 > *, *:first-child + html .mobile-width-100 > *, *:first-child + html .width-33 > *, *:first-child + html .mobile-width-33 > *, *:first-child + html .width-66 > *, *:first-child + html .mobile-width-66 > * {
+  margin-left: expression(!this.className.match(/width-/) && "10px");
+  margin-right: expression(!this.className.match(/width-/) && "10px");
+}
+
+.is-parent {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.push-5, .pull-5, .mobile-push-5, .mobile-pull-5, .push-10, .pull-10, .mobile-push-10, .mobile-pull-10, .push-15, .pull-15, .mobile-push-15, .mobile-pull-15, .push-20, .pull-20, .mobile-push-20, .mobile-pull-20, .push-25, .pull-25, .mobile-push-25, .mobile-pull-25, .push-30, .pull-30, .mobile-push-30, .mobile-pull-30, .push-35, .pull-35, .mobile-push-35, .mobile-pull-35, .push-40, .pull-40, .mobile-push-40, .mobile-pull-40, .push-45, .pull-45, .mobile-push-45, .mobile-pull-45, .push-50, .pull-50, .mobile-push-50, .mobile-pull-50, .push-55, .pull-55, .mobile-push-55, .mobile-pull-55, .push-60, .pull-60, .mobile-push-60, .mobile-pull-60, .push-65, .pull-65, .mobile-push-65, .mobile-pull-65, .push-70, .pull-70, .mobile-push-70, .mobile-pull-70, .push-75, .pull-75, .mobile-push-75, .mobile-pull-75, .push-80, .pull-80, .mobile-push-80, .mobile-pull-80, .push-85, .pull-85, .mobile-push-85, .mobile-pull-85, .push-90, .pull-90, .mobile-push-90, .mobile-pull-90, .push-95, .pull-95, .mobile-push-95, .mobile-pull-95, .push-33, .pull-33, .mobile-push-33, .mobile-pull-33, .push-66, .pull-66, .mobile-push-66, .mobile-pull-66 {
+  position: relative;
+}

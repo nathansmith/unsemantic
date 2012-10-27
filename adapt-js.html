@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport' />
+<title>Unsemantic CSS Framework</title>
+<!--[if lt IE 9]>
+  <script src="./assets/javascripts/html5.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="./assets/stylesheets/demo.css" />
+<link rel="stylesheet" href="./assets/stylesheets/unsemantic-grid-base.css" />
+<noscript>
+  <link rel="stylesheet" href="./assets/stylesheets/unsemantic-grid-mobile.css" />
+</noscript>
+<script>
+  var ADAPT_CONFIG = {
+    path: './assets/stylesheets/',
+    dynamic: true,
+    range: [
+      '0 to 760 = unsemantic-grid-mobile.css',
+      '760 = unsemantic-grid-desktop.css'
+    ]
+  };
+</script>
+<script src="./assets/javascripts/adapt.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="width-100">
+      <h1>
+        <a href="./index.html">Unsemantic</a>
+        <br />
+        <span class="hide-on-mobile">
+          Desktop Grid
+        </span>
+        <span class="hide-on-desktop">
+          Mobile Grid
+        </span>
+      </h1>
+      <hr />
+      <p>
+        This version uses <b>Adapt.js</b>. There's also one that uses <b>@media</b> queries &mdash; <a href="./responsive.html">Here</a>
+      </p>
+      <hr />
+      <p>
+        View CSS&hellip;
+      </p>
+      <p>
+        <a href="./assets/stylesheets/unsemantic-grid-base.css">unsemantic-grid-base.css</a>
+        &nbsp;&bull;&nbsp;
+        <a href="./assets/stylesheets/unsemantic-grid-desktop.css">unsemantic-grid-desktop.css</a>
+        &nbsp;&bull;&nbsp;
+        <a href="./assets/stylesheets/unsemantic-grid-mobile.css">unsemantic-grid-mobile.css</a>
+      </p>
+    </div>
+    <div class="width-100 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          100%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-95 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          95%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-5 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          5%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-90 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          90%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-85 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          85%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-15 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          15%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-80 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          80%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-20 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          20%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-75 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          75%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-25 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          25%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-70 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          70%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-30 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          30%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-65 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          65%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-35 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          35%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-60 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          60%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-40 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          40%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-55 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          55%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-45 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          45%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-50 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          50%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-50 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          50%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-33 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          33%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-33 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          33%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-33 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          33%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-66 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          66%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-33 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          33%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <hr />
+    <div class="width-100">
+      <h2>
+        Prefix &amp; Suffix
+      </h2>
+    </div>
+    <div class="width-10 suffix-90 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 prefix-10 suffix-80 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 prefix-20 suffix-70 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 prefix-30 suffix-60 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 prefix-40 suffix-50 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 prefix-50 suffix-40 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 prefix-60 suffix-30 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 prefix-70 suffix-20 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 prefix-80 suffix-10 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 prefix-90 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <hr />
+    <div class="width-100">
+      <h2>
+        Push &amp; Pull (for SEO)
+      </h2>
+      <p>
+        Green = push. Pink = pull.
+      </p>
+    </div>
+    <div class="width-10 push-90 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 push-30 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 pull-30 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-10 pull-90 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          10%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-20 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          20%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-20 push-60 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          20%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-20 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          20%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-20 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          20%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-20 pull-60 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          20%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-25 push-50 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          25%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-25 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          25%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-25 pull-50 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          25%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-25 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          25%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-66 push-33 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          66%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-33 pull-66 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          33%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-33 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          33%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-33 push-33 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          33%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <div class="width-33 pull-33 mobile-width-50">
+      <section>
+        <b class="hide-on-mobile">
+          33%
+        </b>
+        <b class="hide-on-desktop">
+          50%
+        </b>
+        <span class="dynamic-px-width"></span>
+      </section>
+    </div>
+    <hr />
+    <div class="width-100">
+      <h2>
+        Nested Columns
+      </h2>
+    </div>
+    <div class="width-50 is-parent">
+      <p class="width-100">
+        <b>
+          Parent Column
+        </b>
+      </p>
+      <div class="width-50 mobile-width-50">
+        <section>
+          <b class="hide-on-mobile">
+            50%
+          </b>
+          <b class="hide-on-desktop">
+            50%
+          </b>
+          <span class="dynamic-px-width"></span>
+        </section>
+      </div>
+      <div class="width-50 mobile-width-50">
+        <section>
+          <b class="hide-on-mobile">
+            50%
+          </b>
+          <b class="hide-on-desktop">
+            50%
+          </b>
+          <span class="dynamic-px-width"></span>
+        </section>
+      </div>
+    </div>
+    <div class="width-50 is-parent">
+      <p class="width-100">
+        <b>
+          Parent Column
+        </b>
+      </p>
+      <div class="width-50 mobile-width-50">
+        <section>
+          <b class="hide-on-mobile">
+            50%
+          </b>
+          <b class="hide-on-desktop">
+            50%
+          </b>
+          <span class="dynamic-px-width"></span>
+        </section>
+      </div>
+      <div class="width-50 mobile-width-50">
+        <section>
+          <b class="hide-on-mobile">
+            50%
+          </b>
+          <b class="hide-on-desktop">
+            50%
+          </b>
+          <span class="dynamic-px-width"></span>
+        </section>
+      </div>
+    </div>
+    <div class="width-50 is-parent">
+      <p class="width-100">
+        <b>
+          Parent Column
+        </b>
+      </p>
+      <div class="width-25 mobile-width-50">
+        <section>
+          <b class="hide-on-mobile">
+            25%
+          </b>
+          <b class="hide-on-desktop">
+            50%
+          </b>
+          <span class="dynamic-px-width"></span>
+        </section>
+      </div>
+      <div class="width-25 mobile-width-50">
+        <section>
+          <b class="hide-on-mobile">
+            25%
+          </b>
+          <b class="hide-on-desktop">
+            50%
+          </b>
+          <span class="dynamic-px-width"></span>
+        </section>
+      </div>
+      <div class="width-25 mobile-width-50">
+        <section>
+          <b class="hide-on-mobile">
+            25%
+          </b>
+          <b class="hide-on-desktop">
+            50%
+          </b>
+          <span class="dynamic-px-width"></span>
+        </section>
+      </div>
+      <div class="width-25 mobile-width-50">
+        <section>
+          <b class="hide-on-mobile">
+            25%
+          </b>
+          <b class="hide-on-desktop">
+            50%
+          </b>
+          <span class="dynamic-px-width"></span>
+        </section>
+      </div>
+    </div>
+    <div class="width-50 is-parent">
+      <p class="width-100">
+        <b>
+          Parent Column
+        </b>
+      </p>
+      <div class="width-25 mobile-width-50">
+        <section>
+          <b class="hide-on-mobile">
+            25%
+          </b>
+          <b class="hide-on-desktop">
+            50%
+          </b>
+          <span class="dynamic-px-width"></span>
+        </section>
+      </div>
+      <div class="width-25 mobile-width-50">
+        <section>
+          <b class="hide-on-mobile">
+            25%
+          </b>
+          <b class="hide-on-desktop">
+            50%
+          </b>
+          <span class="dynamic-px-width"></span>
+        </section>
+      </div>
+      <div class="width-25 mobile-width-50">
+        <section>
+          <b class="hide-on-mobile">
+            25%
+          </b>
+          <b class="hide-on-desktop">
+            50%
+          </b>
+          <span class="dynamic-px-width"></span>
+        </section>
+      </div>
+      <div class="width-25 mobile-width-50">
+        <section>
+          <b class="hide-on-mobile">
+            25%
+          </b>
+          <b class="hide-on-desktop">
+            50%
+          </b>
+          <span class="dynamic-px-width"></span>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/javascripts/jquery.js"></script>
+  <script src="./assets/javascripts/application.js"></script>
+</body>
+</html>
