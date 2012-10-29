@@ -7,7 +7,9 @@ It consists of two versions&hellip;
 * One is built with `@media` queries.
 * The other uses [Adapt.js](http://adapt.960.gs/) to resize.
 
-The one that uses `@media` queries serves a desktop width site to IE7 and IE8, because they can't really run on mobile anyway. IE6 is not officially supported, due to the nature of how box-sizing has to work, in order to accomodate a fixed gutter, but allow for fluid column widths.
+The one that uses `@media` queries serves a desktop width site to IE7 and IE8, because they are primarily used on the desktop anyway.
+
+IE6 is not supported, due to the nature of how box-sizing has to work, in order to accomodate a fixed gutter, but allow for fluid column widths. I was able to fake this on IE7 via the immediate child selector `>`, giving elements inside grid columns left/right margin instead of padding to columns themselves. Unfortunately, IE6 lacks support for the immediate child CSS selector.
 
 **Notes:**
 
