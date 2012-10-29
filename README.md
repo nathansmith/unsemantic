@@ -20,3 +20,11 @@ Currently, there is one break point, at 760px. All styles are defined using Sass
 Documentation will be forthcoming. For now, I wanted to get this out there, so people could pick it apart and use it as a learning tool for how Sass handles silent mixins.
 
 Also, I wanted to be able to point people here, when asked "Why isn't [960](http://960.gs/) responsive?" It is my hope that this will eventually obviate the need for the 960 Grid System.
+
+---
+
+I am dual-licensing this under MIT and GPL. Basically, that means you can use the Unsemantic code under whichever license you want. (Some open source projects, such as WordPress and Drupal, require GPL.)
+
+http://opensource.org/licenses/mit-license.php
+
+http://www.gnu.org/licenses/gpl.html
