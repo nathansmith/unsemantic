@@ -74,6 +74,10 @@ body {
   position: relative;
 }
 
+@-ms-viewport {
+  width: device-width;
+}
+
 @media (max-width: 760px) {
   .hide-on-mobile {
     display: none !important;

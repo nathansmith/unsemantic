@@ -74,6 +74,10 @@ body {
   position: relative;
 }
 
+@-ms-viewport {
+  width: device-width;
+}
+
 .hide-on-desktop {
   display: none !important;
 }
