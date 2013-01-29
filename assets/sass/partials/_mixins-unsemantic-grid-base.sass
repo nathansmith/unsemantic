@@ -11,6 +11,7 @@
 // `Variables
 //----------------------------------------------------------------------------------------------------
 
+$media-query-breakpoint: 767px
 $container-max-width: 1200px
 $gutter-half: 10px
 
@@ -24,7 +25,7 @@ $gutter-half: 10px
 // `Container
 //----------------------------------------------------------------------------------------------------
 
-%container
+%grid-container
   margin-left: auto
   margin-right: auto
   max-width: $container-max-width
@@ -45,7 +46,7 @@ $gutter-half: 10px
 // http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified
 
 %clearfix-before-after
-  content: '.'
+  content: "."
   display: block
   overflow: hidden
   visibility: hidden
@@ -83,8 +84,8 @@ $gutter-half: 10px
   // [3] Fake what would normally be padding,
   //     for browsers that support box-sizing.
   *:first-child + html & > *
-    margin-left: expression(!this.className.match(/width-/) && "#{$gutter-half}")
-    margin-right: expression(!this.className.match(/width-/) && "#{$gutter-half}")
+    margin-left: expression(!this.className.match(/grid-/) && "#{$gutter-half}")
+    margin-right: expression(!this.className.match(/grid-/) && "#{$gutter-half}")
   //
   // </End IE7 tweaks>
 
@@ -93,7 +94,7 @@ $gutter-half: 10px
 
 // Remove padding, if it's being used
 // as a parent for other grid columns.
-%is-parent
+%grid-parent
   padding-left: 0
   padding-right: 0
 

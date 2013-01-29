@@ -279,11 +279,11 @@ section {
   text-align: center;
 }
 
-.container {
+.grid-container {
   padding-bottom: 20px;
 }
 
-.container > hr {
+.grid-container > hr {
   margin-left: 10px;
   margin-right: 10px;
 }

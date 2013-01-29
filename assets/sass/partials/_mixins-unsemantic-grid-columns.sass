@@ -25,22 +25,23 @@
 
 @for $i from 1 through 19
   $num: $i * 5
+  $precise: $num * 1%
 
-  %width-#{$num}
+  %grid-#{$num}
     @extend %grid-columns
-    width: percentage($num / 100)
+    width: $precise
 
   %prefix-#{$num}
-    margin-#{$lang-forward}: percentage($num / 100)
+    margin-#{$lang-forward}: $precise
 
   %suffix-#{$num}
-    margin-#{$lang-reverse}: percentage($num / 100)
+    margin-#{$lang-reverse}: $precise
 
   %push-#{$num}
-    #{$lang-forward}: percentage($num / 100)
+    #{$lang-forward}: $precise
 
   %pull-#{$num}
-    #{$lang-forward}: percentage($num / 100) * -1
+    #{$lang-forward}: $precise * -1
 
 //
 // For one-third and two-thirds.
@@ -50,31 +51,32 @@
   $num: $i * 33
   $one-third: 1/3
   $decimal: $i * $one-third
-  $precise: $num + $decimal
+  $precise: ($num + $decimal) * 1%
 
   // Percentage based widths.
-  %width-#{$num}
+  %grid-#{$num}
     @extend %grid-columns
-    width: percentage($precise / 100)
+    width: $precise
 
   // Prefix, to add extra columns before.
   %prefix-#{$num}
-    margin-#{$lang-forward}: percentage($precise / 100)
+    margin-#{$lang-forward}: $precise
 
   // Suffix, to add extra columns after.
   %suffix-#{$num}
-    margin-#{$lang-reverse}: percentage($precise / 100)
+    margin-#{$lang-reverse}: $precise
 
   // Push & Pull, to rearrange column order (for potential "SEO").
   %push-#{$num}
-    #{$lang-forward}: percentage($precise / 100)
+    #{$lang-forward}: $precise
 
   %pull-#{$num}
-    #{$lang-forward}: percentage($precise / 100) * -1
+    #{$lang-forward}: $precise * -1
 
 //
 // Full width, just line-break.
 //
 
-%width-100
+%grid-100
   clear: both
+  width: 100%

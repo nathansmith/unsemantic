@@ -2,11 +2,11 @@
   display: none !important;
 }
 
-.width-5, .width-10, .width-15, .width-20, .width-25, .width-30, .width-35, .width-40, .width-45, .width-50, .width-55, .width-60, .width-65, .width-70, .width-75, .width-80, .width-85, .width-90, .width-95, .width-33, .width-66 {
+.grid-5, .grid-10, .grid-15, .grid-20, .grid-25, .grid-30, .grid-35, .grid-40, .grid-45, .grid-50, .grid-55, .grid-60, .grid-65, .grid-70, .grid-75, .grid-80, .grid-85, .grid-90, .grid-95, .grid-33, .grid-66 {
   float: right;
 }
 
-.width-5 {
+.grid-5 {
   width: 5%;
 }
 
@@ -26,7 +26,7 @@
   right: -5%;
 }
 
-.width-10 {
+.grid-10 {
   width: 10%;
 }
 
@@ -46,7 +46,7 @@
   right: -10%;
 }
 
-.width-15 {
+.grid-15 {
   width: 15%;
 }
 
@@ -66,7 +66,7 @@
   right: -15%;
 }
 
-.width-20 {
+.grid-20 {
   width: 20%;
 }
 
@@ -86,7 +86,7 @@
   right: -20%;
 }
 
-.width-25 {
+.grid-25 {
   width: 25%;
 }
 
@@ -106,7 +106,7 @@
   right: -25%;
 }
 
-.width-30 {
+.grid-30 {
   width: 30%;
 }
 
@@ -126,7 +126,7 @@
   right: -30%;
 }
 
-.width-35 {
+.grid-35 {
   width: 35%;
 }
 
@@ -146,7 +146,7 @@
   right: -35%;
 }
 
-.width-40 {
+.grid-40 {
   width: 40%;
 }
 
@@ -166,7 +166,7 @@
   right: -40%;
 }
 
-.width-45 {
+.grid-45 {
   width: 45%;
 }
 
@@ -186,7 +186,7 @@
   right: -45%;
 }
 
-.width-50 {
+.grid-50 {
   width: 50%;
 }
 
@@ -206,27 +206,27 @@
   right: -50%;
 }
 
-.width-55 {
-  width: 55.0%;
+.grid-55 {
+  width: 55%;
 }
 
 .prefix-55 {
-  margin-right: 55.0%;
+  margin-right: 55%;
 }
 
 .suffix-55 {
-  margin-left: 55.0%;
+  margin-left: 55%;
 }
 
 .push-55 {
-  right: 55.0%;
+  right: 55%;
 }
 
 .pull-55 {
-  right: -55.0%;
+  right: -55%;
 }
 
-.width-60 {
+.grid-60 {
   width: 60%;
 }
 
@@ -246,7 +246,7 @@
   right: -60%;
 }
 
-.width-65 {
+.grid-65 {
   width: 65%;
 }
 
@@ -266,7 +266,7 @@
   right: -65%;
 }
 
-.width-70 {
+.grid-70 {
   width: 70%;
 }
 
@@ -286,7 +286,7 @@
   right: -70%;
 }
 
-.width-75 {
+.grid-75 {
   width: 75%;
 }
 
@@ -306,7 +306,7 @@
   right: -75%;
 }
 
-.width-80 {
+.grid-80 {
   width: 80%;
 }
 
@@ -326,7 +326,7 @@
   right: -80%;
 }
 
-.width-85 {
+.grid-85 {
   width: 85%;
 }
 
@@ -346,7 +346,7 @@
   right: -85%;
 }
 
-.width-90 {
+.grid-90 {
   width: 90%;
 }
 
@@ -366,7 +366,7 @@
   right: -90%;
 }
 
-.width-95 {
+.grid-95 {
   width: 95%;
 }
 
@@ -386,7 +386,7 @@
   right: -95%;
 }
 
-.width-33 {
+.grid-33 {
   width: 33.33333%;
 }
 
@@ -406,7 +406,7 @@
   right: -33.33333%;
 }
 
-.width-66 {
+.grid-66 {
   width: 66.66667%;
 }
 
@@ -426,6 +426,7 @@
   right: -66.66667%;
 }
 
-.width-100 {
+.grid-100 {
   clear: both;
+  width: 100%;
 }

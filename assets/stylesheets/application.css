@@ -277,7 +277,7 @@ img {
   max-width: 100%;
 }
 
-.container > hr {
+.grid-container > hr {
   margin-left: 10px;
   margin-right: 10px;
 }
