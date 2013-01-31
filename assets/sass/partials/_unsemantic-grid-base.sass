@@ -1,4 +1,4 @@
-@import "unsemantic-mixins-grid-base"
+@import "unsemantic-vars"
 
 // Fix for IE in Windows 8 "snap" mode.
 //
@@ -11,7 +11,7 @@
 //----------------------------------------------------------------------------------------------------
 
 body
-  @extend %body-side-padding
+  min-width: 320px
 
 .grid-container
   @extend %grid-container
@@ -22,27 +22,30 @@ body
 .clear
   @extend %clear
 
-.clearfix:before,
-.clearfix:after,
-.grid-container:before,
-.grid-container:after,
-.grid-100:before,
-.grid-100:after,
-.mobile-grid-100:before,
-.mobile-grid-100:after
-  @extend %clearfix-before-after
+// .clearfix:before,
+// .clearfix:after,
+// .grid-container:before,
+// .grid-container:after,
+// .grid-100:before,
+// .grid-100:after,
+// .mobile-grid-100:before,
+// .mobile-grid-100:after
+//   @extend %clearfix-before-after
 
-.clearfix:after,
-.grid-container:after,
-.grid-100:after,
-.mobile-grid-100:after
-  @extend %clearfix-after
+// .clearfix:after,
+// .grid-container:after,
+// .grid-100:after,
+// .mobile-grid-100:after
+//   @extend %clearfix-after
 
-.clearfix,
-.grid-container,
-.grid-100,
-.mobile-grid-100
-  @extend %zoom
+// .clearfix,
+// .grid-container,
+// .grid-100,
+// .mobile-grid-100
+//   @extend %zoom
+
+.clearfix
+  @extend %clearfix
 
 // `Grid columns.
 //----------------------------------------------------------------------------------------------------
@@ -78,35 +81,3 @@ body
 
 .grid-parent
   @extend %grid-parent
-
-// `Push & Pull, to rearrange column order (for potential "SEO").
-//----------------------------------------------------------------------------------------------------
-
-//
-// For 5 through 95 percent.
-//
-
-@for $i from 1 through 19
-  $num: $i * 5
-
-  .push-#{$num},
-  .pull-#{$num},
-  .mobile-push-#{$num},
-  .mobile-pull-#{$num}
-    @extend %grid-columns-push-pull
-
-//
-// For one-third and two-thirds.
-//
-
-@for $i from 1 through 2
-  $num: $i * 33
-  // $one-third: 1/3
-  // $decimal: $i * $one-third
-  // $precise: $num + $decimal
-
-  .push-#{$num},
-  .pull-#{$num},
-  .mobile-push-#{$num},
-  .mobile-pull-#{$num}
-    @extend %grid-columns-push-pull

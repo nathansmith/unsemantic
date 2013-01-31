@@ -1,0 +1,181 @@
+// These mixins are intended to be used from:
+//
+//   * _unsemantic-grid-base.sass
+//   * _unsemantic-grid-mobile.sass
+//   * _unsemantic-grid-desktop.sass
+//
+// But could be used in your own styles, via class
+// names of your choice. You don't *have* to be
+// unsemantic. That's entirely up to you! :)
+
+@import "compass/css3"
+
+// `Variables
+//----------------------------------------------------------------------------------------------------
+
+$container-max-width: 1200px !default
+
+$gutter-half: 10px !default
+
+$lang-forward: left !default
+
+$lang-reverse: right !default
+
+// `Clear floated elements.
+//----------------------------------------------------------------------------------------------------
+
+// http://sonspring.com/journal/clearing-floats
+
+%clear
+  clear: both
+  display: block
+  overflow: hidden
+  visibility: hidden
+  width: 0
+  height: 0
+
+// http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified
+
+%clearfix:before,
+%clearfix:after
+  content: "."
+  display: block
+  overflow: hidden
+  visibility: hidden
+  font-size: 0
+  line-height: 0
+  width: 0
+  height: 0
+
+%clearfix:after
+  clear: both
+
+%clearfix
+  // For IE7.
+  zoom: 1
+
+// `Container
+//----------------------------------------------------------------------------------------------------
+
+%grid-container
+  @extend %clearfix
+  margin-left: auto
+  margin-right: auto
+  padding-left: $gutter-half
+  padding-right: $gutter-half
+  max-width: $container-max-width
+
+// `Grid columns.
+//----------------------------------------------------------------------------------------------------
+
+%grid-columns-all
+  +box-sizing(border-box)
+  padding-left: $gutter-half
+  padding-right: $gutter-half
+
+  // <Begin IE7 tweaks>
+  //
+  // [1] Remove padding, since IE7 doesn't
+  //     support "box-sizing: border-box".
+  *padding-left: 0
+  *padding-right: 0
+  //
+  // [2] Adjust for possible rounding errors,
+  //     pulling the adjacent sibling closer.
+  *margin-#{$lang-forward}: -1px
+  //
+  // [3] Fake what would normally be padding,
+  //     for browsers that support box-sizing.
+  *:first-child + html & > *
+    margin-left: expression(!this.className.match(/grid-\d/) && "#{$gutter-half}")
+    margin-right: expression(!this.className.match(/grid-\d/) && "#{$gutter-half}")
+  //
+  // </End IE7 tweaks>
+
+// `Push & Pull, to rearrange column order (for potential "SEO").
+//----------------------------------------------------------------------------------------------------
+
+// Remove padding, if it's being used
+// as a parent for other grid columns.
+%grid-parent
+  padding-left: 0
+  padding-right: 0
+
+// Allows columns to be offset +/- left.
+%grid-columns-push-pull
+  position: relative
+
+// `Hide on desktop/mobile.
+//----------------------------------------------------------------------------------------------------
+
+%hide
+  display: none !important
+
+// `Grid columns.
+//----------------------------------------------------------------------------------------------------
+
+%grid-columns
+  float: $lang-forward
+
+//
+// For 5 through 95 percent.
+//
+
+@for $i from 1 through 19
+  $num: $i * 5
+  $percent: $num * 1%
+
+  %grid-#{$num}
+    @extend %grid-columns
+    width: $percent
+
+  %prefix-#{$num}
+    margin-#{$lang-forward}: $percent
+
+  %suffix-#{$num}
+    margin-#{$lang-reverse}: $percent
+
+  %push-#{$num}
+    #{$lang-forward}: $percent
+
+  %pull-#{$num}
+    #{$lang-forward}: $percent * -1
+
+//
+// For one-third and two-thirds.
+//
+
+@for $i from 1 through 2
+  $num: $i * 33
+  $one-third: 1/3
+  $decimal: $i * $one-third
+  $percent: ($num + $decimal) * 1%
+
+  // Percentage based widths.
+  %grid-#{$num}
+    @extend %grid-columns
+    width: $percent
+
+  // Prefix, to add extra columns before.
+  %prefix-#{$num}
+    margin-#{$lang-forward}: $percent
+
+  // Suffix, to add extra columns after.
+  %suffix-#{$num}
+    margin-#{$lang-reverse}: $percent
+
+  // Push & Pull, to rearrange column order (for potential "SEO").
+  %push-#{$num}
+    #{$lang-forward}: $percent
+
+  %pull-#{$num}
+    #{$lang-forward}: $percent * -1
+
+//
+// Full width, just line-break.
+//
+
+%grid-100
+  @extend %clearfix
+  clear: both
+  width: 100%

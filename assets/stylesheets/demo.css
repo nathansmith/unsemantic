@@ -270,7 +270,7 @@ h1 {
   padding-top: 20px;
 }
 
-section {
+.example-block {
   background: #eeeeee;
   font-size: 10px;
   overflow: hidden;

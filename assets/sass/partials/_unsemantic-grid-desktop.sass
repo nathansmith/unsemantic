@@ -1,4 +1,4 @@
-@import "unsemantic-mixins-grid-columns"
+@import "unsemantic-vars"
 
 // `Hide on desktop.
 //----------------------------------------------------------------------------------------------------
@@ -10,24 +10,36 @@
 //----------------------------------------------------------------------------------------------------
 
 //
+// Full width, just line-break.
+//
+
+.grid-100
+  @extend %grid-100
+
+//
 // For 5 through 95 percent.
 //
 
 @for $i from 1 through 19
   $num: $i * 5
 
+  // Percentage based widths.
   .grid-#{$num}
     @extend %grid-#{$num}
 
+  // Prefix, to add extra columns before.
   .prefix-#{$num}
     @extend %prefix-#{$num}
 
+  // Suffix, to add extra columns after.
   .suffix-#{$num}
     @extend %suffix-#{$num}
 
+  // Push, to rearrange column order (for potential "SEO").
   .push-#{$num}
     @extend %push-#{$num}
 
+  // Pull, to rearrange column order (for potential "SEO").
   .pull-#{$num}
     @extend %pull-#{$num}
 
@@ -50,16 +62,35 @@
   .suffix-#{$num}
     @extend %suffix-#{$num}
 
-  // Push & Pull, to rearrange column order (for potential "SEO").
+  // Push, to rearrange column order (for potential "SEO").
   .push-#{$num}
     @extend %push-#{$num}
 
+  // Pull, to rearrange column order (for potential "SEO").
   .pull-#{$num}
     @extend %pull-#{$num}
 
+// `Push & Pull, to rearrange column order (for potential "SEO").
+//----------------------------------------------------------------------------------------------------
+
 //
-// Full width, just line-break.
+// For 5 through 95 percent.
 //
 
-.grid-100
-  @extend %grid-100
+@for $i from 1 through 19
+  $num: $i * 5
+
+  .push-#{$num},
+  .pull-#{$num}
+    @extend %grid-columns-push-pull
+
+//
+// For one-third and two-thirds.
+//
+
+@for $i from 1 through 2
+  $num: $i * 33
+
+  .push-#{$num},
+  .pull-#{$num}
+    @extend %grid-columns-push-pull

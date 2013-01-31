@@ -1,14 +1,3 @@
-body {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.grid-container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1200px;
-}
-
 .clear {
   clear: both;
   display: block;
@@ -18,14 +7,9 @@ body {
   height: 0;
 }
 
-.clearfix:before,
-.clearfix:after,
-.grid-container:before,
+.grid-container:before, .clearfix:before,
 .grid-container:after,
-.grid-100:before,
-.grid-100:after,
-.mobile-grid-100:before,
-.mobile-grid-100:after {
+.clearfix:after {
   content: ".";
   display: block;
   overflow: hidden;
@@ -36,18 +20,20 @@ body {
   height: 0;
 }
 
-.clearfix:after,
-.grid-container:after,
-.grid-100:after,
-.mobile-grid-100:after {
+.grid-container:after, .clearfix:after {
   clear: both;
 }
 
-.clearfix,
-.grid-container,
-.grid-100,
-.mobile-grid-100 {
+.grid-container, .clearfix {
   zoom: 1;
+}
+
+.grid-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 1200px;
 }
 
 .grid-5, .mobile-grid-5, .grid-10, .mobile-grid-10, .grid-15, .mobile-grid-15, .grid-20, .mobile-grid-20, .grid-25, .mobile-grid-25, .grid-30, .mobile-grid-30, .grid-35, .mobile-grid-35, .grid-40, .mobile-grid-40, .grid-45, .mobile-grid-45, .grid-50, .mobile-grid-50, .grid-55, .mobile-grid-55, .grid-60, .mobile-grid-60, .grid-65, .mobile-grid-65, .grid-70, .mobile-grid-70, .grid-75, .mobile-grid-75, .grid-80, .mobile-grid-80, .grid-85, .mobile-grid-85, .grid-90, .mobile-grid-90, .grid-95, .mobile-grid-95, .grid-100, .mobile-grid-100, .grid-33, .mobile-grid-33, .grid-66, .mobile-grid-66 {
@@ -61,8 +47,8 @@ body {
   *margin-left: -1px;
 }
 *:first-child + html .grid-5 > *, *:first-child + html .mobile-grid-5 > *, *:first-child + html .grid-10 > *, *:first-child + html .mobile-grid-10 > *, *:first-child + html .grid-15 > *, *:first-child + html .mobile-grid-15 > *, *:first-child + html .grid-20 > *, *:first-child + html .mobile-grid-20 > *, *:first-child + html .grid-25 > *, *:first-child + html .mobile-grid-25 > *, *:first-child + html .grid-30 > *, *:first-child + html .mobile-grid-30 > *, *:first-child + html .grid-35 > *, *:first-child + html .mobile-grid-35 > *, *:first-child + html .grid-40 > *, *:first-child + html .mobile-grid-40 > *, *:first-child + html .grid-45 > *, *:first-child + html .mobile-grid-45 > *, *:first-child + html .grid-50 > *, *:first-child + html .mobile-grid-50 > *, *:first-child + html .grid-55 > *, *:first-child + html .mobile-grid-55 > *, *:first-child + html .grid-60 > *, *:first-child + html .mobile-grid-60 > *, *:first-child + html .grid-65 > *, *:first-child + html .mobile-grid-65 > *, *:first-child + html .grid-70 > *, *:first-child + html .mobile-grid-70 > *, *:first-child + html .grid-75 > *, *:first-child + html .mobile-grid-75 > *, *:first-child + html .grid-80 > *, *:first-child + html .mobile-grid-80 > *, *:first-child + html .grid-85 > *, *:first-child + html .mobile-grid-85 > *, *:first-child + html .grid-90 > *, *:first-child + html .mobile-grid-90 > *, *:first-child + html .grid-95 > *, *:first-child + html .mobile-grid-95 > *, *:first-child + html .grid-100 > *, *:first-child + html .mobile-grid-100 > *, *:first-child + html .grid-33 > *, *:first-child + html .mobile-grid-33 > *, *:first-child + html .grid-66 > *, *:first-child + html .mobile-grid-66 > * {
-  margin-left: expression(!this.className.match(/grid-/) && "10px");
-  margin-right: expression(!this.className.match(/grid-/) && "10px");
+  margin-left: expression(!this.className.match(/grid-\d/) && "10px");
+  margin-right: expression(!this.className.match(/grid-\d/) && "10px");
 }
 
 .grid-parent {
@@ -70,73 +56,10 @@ body {
   padding-right: 0;
 }
 
-.push-5,
-.pull-5,
-.mobile-push-5,
-.mobile-pull-5, .push-10,
-.pull-10,
-.mobile-push-10,
-.mobile-pull-10, .push-15,
-.pull-15,
-.mobile-push-15,
-.mobile-pull-15, .push-20,
-.pull-20,
-.mobile-push-20,
-.mobile-pull-20, .push-25,
-.pull-25,
-.mobile-push-25,
-.mobile-pull-25, .push-30,
-.pull-30,
-.mobile-push-30,
-.mobile-pull-30, .push-35,
-.pull-35,
-.mobile-push-35,
-.mobile-pull-35, .push-40,
-.pull-40,
-.mobile-push-40,
-.mobile-pull-40, .push-45,
-.pull-45,
-.mobile-push-45,
-.mobile-pull-45, .push-50,
-.pull-50,
-.mobile-push-50,
-.mobile-pull-50, .push-55,
-.pull-55,
-.mobile-push-55,
-.mobile-pull-55, .push-60,
-.pull-60,
-.mobile-push-60,
-.mobile-pull-60, .push-65,
-.pull-65,
-.mobile-push-65,
-.mobile-pull-65, .push-70,
-.pull-70,
-.mobile-push-70,
-.mobile-pull-70, .push-75,
-.pull-75,
-.mobile-push-75,
-.mobile-pull-75, .push-80,
-.pull-80,
-.mobile-push-80,
-.mobile-pull-80, .push-85,
-.pull-85,
-.mobile-push-85,
-.mobile-pull-85, .push-90,
-.pull-90,
-.mobile-push-90,
-.mobile-pull-90, .push-95,
-.pull-95,
-.mobile-push-95,
-.mobile-pull-95, .push-33,
-.pull-33,
-.mobile-push-33,
-.mobile-pull-33, .push-66,
-.pull-66,
-.mobile-push-66,
-.mobile-pull-66 {
-  position: relative;
-}
-
 @-ms-viewport {
   width: device-width;
+}
+
+body {
+  min-width: 320px;
 }
