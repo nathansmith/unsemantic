@@ -515,10 +515,6 @@
   width: 100%;
 }
 
-@-ms-viewport {
-  width: device-width;
-}
-
 body {
   min-width: 320px;
 }
