@@ -15,7 +15,7 @@
 }
 
 .grid-100 {
-  zoom: 1;
+  *zoom: 1;
 }
 
 .push-5,

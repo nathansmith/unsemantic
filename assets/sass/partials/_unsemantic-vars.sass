@@ -52,7 +52,7 @@ $lang-reverse: right !default
 
 %clearfix
   // For IE7.
-  zoom: 1
+  *zoom: 1
 
 // `Container
 //----------------------------------------------------------------------------------------------------
@@ -87,8 +87,8 @@ $lang-reverse: right !default
   // [3] Fake what would normally be padding,
   //     for browsers that support box-sizing.
   *:first-child + html & > *
-    margin-left: expression(!this.className.match(/grid-\d/) && "#{$gutter-half}")
-    margin-right: expression(!this.className.match(/grid-\d/) && "#{$gutter-half}")
+    margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "#{$gutter-half}")
+    margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "#{$gutter-half}")
   //
   // </End IE7 tweaks>
 
