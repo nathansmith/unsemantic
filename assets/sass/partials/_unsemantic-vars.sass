@@ -14,16 +14,12 @@
 //
 // If you do not declare that variable, the default setting is true.
 
-
-// NOTE: Throughout this file, there are instructions to delete IE7 code, if not needed.
-//       This does _not_ mean to delete the code out of a *.sass file. Those comments are
-//       there so that they will be generated in the actual *.css file. So, if people
-//       are using the compiled CSS but doesn't need IE7 support, they can delete it.
-
 @import "compass/css3"
 
 // `Variables
 //----------------------------------------------------------------------------------------------------
+
+$unsemantic-ie7-support: true !default
 
 $container-max-width: 1200px !default
 
@@ -34,8 +30,6 @@ $gutter-half: #{$gutter-half-num}px !default
 $lang-forward: left !default
 
 $lang-reverse: right !default
-
-$unsemantic-ie7-support: true !default
 
 // `Clear floated elements.
 //----------------------------------------------------------------------------------------------------
@@ -89,6 +83,24 @@ $unsemantic-ie7-support: true !default
   padding-left: $gutter-half
   padding-right: $gutter-half
 
+  @if $unsemantic-ie7-support == true
+    // [1] Remove padding, since IE7 doesn't
+    //     support "box-sizing: border-box".
+
+    /* <IE7> */
+    *padding-left: 0
+    *padding-right: 0
+    /* </IE7> */
+
+    //
+    // [2] Fake what would normally be padding,
+    //     for browsers that support box-sizing.
+    & > *
+      /* <IE7> */
+      *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "#{$gutter-half}")
+      *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "#{$gutter-half}")
+      /* </IE7> */
+
 // `Push & Pull, to rearrange column order (for potential "SEO").
 //----------------------------------------------------------------------------------------------------
 
@@ -127,6 +139,11 @@ $unsemantic-ie7-support: true !default
     @extend %grid-columns
     width: $percent
 
+    @if $unsemantic-ie7-support == true
+      /* <IE7> */
+      *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
+      /* </IE7> */
+
   %prefix-#{$num}
     margin-#{$lang-forward}: $percent
 
@@ -136,8 +153,18 @@ $unsemantic-ie7-support: true !default
   %push-#{$num}
     #{$lang-forward}: $percent
 
+    @if $unsemantic-ie7-support == true
+      /* <IE7> */
+      *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
+      /* </IE7> */
+
   %pull-#{$num}
     #{$lang-forward}: $percent * -1
+
+    @if $unsemantic-ie7-support == true
+      /* <IE7> */
+      *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
+      /* </IE7> */
 
 //
 // For one-third and two-thirds.
@@ -166,8 +193,18 @@ $unsemantic-ie7-support: true !default
   %push-#{$num}
     #{$lang-forward}: $percent
 
+    @if $unsemantic-ie7-support == true
+      /* <IE7> */
+      *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
+      /* </IE7> */
+
   %pull-#{$num}
     #{$lang-forward}: $percent * -1
+
+    @if $unsemantic-ie7-support == true
+      /* <IE7> */
+      *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
+      /* </IE7> */
 
 //
 // Full width, just line-break.
@@ -177,122 +214,3 @@ $unsemantic-ie7-support: true !default
   @extend %clearfix
   clear: both
   width: 100%
-
-// `IE7 Support
-//----------------------------------------------------------------------------------------------------
-
-@if $unsemantic-ie7-support == true
-  //
-  // For all columns
-  //
-  %ie7-grid-columns-all
-    /* ==================================================================================================== */
-    /* IE7 SUPPORT - Delete BELOW if you don't need to support IE7 */
-    /* <start> */
-
-    // [1] Remove padding, since IE7 doesn't
-    //     support "box-sizing: border-box".
-    *padding-left: 0
-    *padding-right: 0
-
-    /* </end> */
-    /* IE7 SUPPORT - Delete ABOVE if you don't need to support IE7 */
-    /* ==================================================================================================== */
-
-    //
-    // [2] Fake what would normally be padding,
-    //     for browsers that support box-sizing.
-    & > *
-      /* ==================================================================================================== */
-      /* IE7 SUPPORT - Delete BELOW if you don't need to support IE7 */
-      /* <start> */
-
-      *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "#{$gutter-half}")
-      *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "#{$gutter-half}")
-
-      /* </end> */
-      /* IE7 SUPPORT - Delete ABOVE if you don't need to support IE7 */
-      /* ==================================================================================================== */
-
-  //
-  // For 5 through 95 percent.
-  //
-  @for $i from 1 through 19
-    $num: $i * 5
-    $decimal: $num / 100
-    $percent: $num * 1%
-
-    %ie7-grid-#{$num}
-      /* ==================================================================================================== */
-      /* IE7 SUPPORT - Delete BELOW if you don't need to support IE7 */
-      /* <start> */
-
-      *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
-
-      /* </end> */
-      /* IE7 SUPPORT - Delete ABOVE if you don't need to support IE7 */
-      /* ==================================================================================================== */
-
-    %ie7-push-#{$num}
-      /* ==================================================================================================== */
-      /* IE7 SUPPORT - Delete BELOW if you don't need to support IE7 */
-      /* <start> */
-
-      *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
-
-      /* </end> */
-      /* IE7 SUPPORT - Delete ABOVE if you don't need to support IE7 */
-      /* ==================================================================================================== */
-
-    %ie7-pull-#{$num}
-      /* ==================================================================================================== */
-      /* IE7 SUPPORT - Delete BELOW if you don't need to support IE7 */
-      /* <start> */
-
-      *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
-
-      /* </end> */
-      /* IE7 SUPPORT - Delete ABOVE if you don't need to support IE7 */
-      /* ==================================================================================================== */
-
-  //
-  // For one-third and two-thirds.
-  //
-  @for $i from 1 through 2
-    $num: $i * 33
-    $one-third: 1/3
-    $decimal: $i * $one-third
-    $percent: ($num + $decimal) * 1%
-
-    %ie7-grid-#{$num}
-      /* ==================================================================================================== */
-      /* IE7 SUPPORT - Delete BELOW if you don't need to support IE7 */
-      /* <start> */
-
-      *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
-
-      /* </end> */
-      /* IE7 SUPPORT - Delete ABOVE if you don't need to support IE7 */
-      /* ==================================================================================================== */
-
-    %ie7-push-#{$num}
-      /* ==================================================================================================== */
-      /* IE7 SUPPORT - Delete BELOW if you don't need to support IE7 */
-      /* <start> */
-
-      *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
-
-      /* </end> */
-      /* IE7 SUPPORT - Delete ABOVE if you don't need to support IE7 */
-      /* ==================================================================================================== */
-
-    %ie7-pull-#{$num}
-      /* ==================================================================================================== */
-      /* IE7 SUPPORT - Delete BELOW if you don't need to support IE7 */
-      /* <start> */
-
-      *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
-
-      /* </end> */
-      /* IE7 SUPPORT - Delete ABOVE if you don't need to support IE7 */
-      /* ==================================================================================================== */
