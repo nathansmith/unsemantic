@@ -1,0 +1,38 @@
+@import "unsemantic-vars"
+
+$unsemantic-ie7-support: true !default
+
+// `IE7 Support
+//----------------------------------------------------------------------------------------------------
+
+@if $unsemantic-ie7-support == true
+  //
+  // For 5 through 100 percent.
+  //
+
+  @for $i from 1 through 20
+    $num: $i * 5
+
+    .grid-#{$num}
+      @extend %ie7-grid-#{$num}
+
+    .push-#{$num}
+      @extend %ie7-push-#{$num}
+
+    .pull-#{$num}
+      @extend %ie7-pull-#{$num}
+
+  //
+  // For one-third and two-thirds.
+  //
+  @for $i from 1 through 2
+    $num: $i * 33
+
+    .grid-#{$num}
+      @extend %ie7-grid-#{$num}
+
+    .push-#{$num}
+      @extend %ie7-push-#{$num}
+
+    .pull-#{$num}
+      @extend %ie7-pull-#{$num}

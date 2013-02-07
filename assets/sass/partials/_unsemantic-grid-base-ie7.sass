@@ -1,0 +1,25 @@
+@import "unsemantic-vars"
+
+$unsemantic-ie7-support: true !default
+
+@if $unsemantic-ie7-support == true
+  //
+  // For 5 through 100 percent.
+  //
+
+  @for $i from 1 through 20
+    $num: $i * 5
+
+    .grid-#{$num},
+    .mobile-grid-#{$num}
+      @extend %ie7-grid-columns-all
+
+  //
+  // For one-third and two-thirds.
+  //
+  @for $i from 1 through 2
+    $num: $i * 33
+
+    .grid-#{$num},
+    .mobile-grid-#{$num}
+      @extend %ie7-grid-columns-all

@@ -48,13 +48,6 @@
     box-sizing: border-box;
     padding-left: 10px;
     padding-right: 10px;
-    *padding-left: 0;
-    *padding-right: 0;
-    *margin-right: -1px;
-  }
-  *:first-child + html .grid-5 > *, *:first-child + html .mobile-grid-5 > *, *:first-child + html .grid-10 > *, *:first-child + html .mobile-grid-10 > *, *:first-child + html .grid-15 > *, *:first-child + html .mobile-grid-15 > *, *:first-child + html .grid-20 > *, *:first-child + html .mobile-grid-20 > *, *:first-child + html .grid-25 > *, *:first-child + html .mobile-grid-25 > *, *:first-child + html .grid-30 > *, *:first-child + html .mobile-grid-30 > *, *:first-child + html .grid-35 > *, *:first-child + html .mobile-grid-35 > *, *:first-child + html .grid-40 > *, *:first-child + html .mobile-grid-40 > *, *:first-child + html .grid-45 > *, *:first-child + html .mobile-grid-45 > *, *:first-child + html .grid-50 > *, *:first-child + html .mobile-grid-50 > *, *:first-child + html .grid-55 > *, *:first-child + html .mobile-grid-55 > *, *:first-child + html .grid-60 > *, *:first-child + html .mobile-grid-60 > *, *:first-child + html .grid-65 > *, *:first-child + html .mobile-grid-65 > *, *:first-child + html .grid-70 > *, *:first-child + html .mobile-grid-70 > *, *:first-child + html .grid-75 > *, *:first-child + html .mobile-grid-75 > *, *:first-child + html .grid-80 > *, *:first-child + html .mobile-grid-80 > *, *:first-child + html .grid-85 > *, *:first-child + html .mobile-grid-85 > *, *:first-child + html .grid-90 > *, *:first-child + html .mobile-grid-90 > *, *:first-child + html .grid-95 > *, *:first-child + html .mobile-grid-95 > *, *:first-child + html .grid-100 > *, *:first-child + html .mobile-grid-100 > *, *:first-child + html .grid-33 > *, *:first-child + html .mobile-grid-33 > *, *:first-child + html .grid-66 > *, *:first-child + html .mobile-grid-66 > * {
-    margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "10px");
-    margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "10px");
   }
 
   .grid-parent {
