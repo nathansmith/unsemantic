@@ -14,10 +14,6 @@
   clear: both;
 }
 
-.mobile-grid-100 {
-  *zoom: 1;
-}
-
 .mobile-push-5,
 .mobile-pull-5, .mobile-push-10,
 .mobile-pull-10, .mobile-push-15,

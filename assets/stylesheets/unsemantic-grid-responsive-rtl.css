@@ -31,7 +31,9 @@
   }
 
   .grid-container, .clearfix {
+    /* <IE7> */
     *zoom: 1;
+    /* </IE7> */
   }
 
   .grid-container {
@@ -87,7 +89,9 @@
   }
 
   .mobile-grid-100 {
+    /* <IE7> */
     *zoom: 1;
+    /* </IE7> */
   }
 
   .mobile-push-5,
@@ -749,7 +753,9 @@
   }
 
   .grid-100 {
+    /* <IE7> */
     *zoom: 1;
+    /* </IE7> */
   }
 
   .push-5,

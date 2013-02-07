@@ -60,9 +60,11 @@ $lang-reverse: right !default
 %clearfix:after
   clear: both
 
-%clearfix
-  // For IE7.
-  *zoom: 1
+@if $unsemantic-ie7-support == true
+  %clearfix
+    /* <IE7> */
+    *zoom: 1
+    /* </IE7> */
 
 // `Container
 //----------------------------------------------------------------------------------------------------

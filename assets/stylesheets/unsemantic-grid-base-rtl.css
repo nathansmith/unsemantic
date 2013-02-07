@@ -30,7 +30,9 @@
 }
 
 .grid-container, .clearfix {
+  /* <IE7> */
   *zoom: 1;
+  /* </IE7> */
 }
 
 .grid-container {

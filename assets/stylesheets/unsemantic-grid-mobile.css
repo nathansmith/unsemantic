@@ -15,7 +15,9 @@
 }
 
 .mobile-grid-100 {
+  /* <IE7> */
   *zoom: 1;
+  /* </IE7> */
 }
 
 .mobile-push-5,

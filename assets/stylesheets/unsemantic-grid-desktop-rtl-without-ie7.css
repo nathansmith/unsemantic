@@ -14,10 +14,6 @@
   clear: both;
 }
 
-.grid-100 {
-  *zoom: 1;
-}
-
 .push-5,
 .pull-5, .push-10,
 .pull-10, .push-15,

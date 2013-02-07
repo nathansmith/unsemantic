@@ -26,7 +26,9 @@
 }
 
 .grid-container, .grid-100, .clearfix {
+  /* <IE7> */
   *zoom: 1;
+  /* </IE7> */
 }
 
 .grid-container {
@@ -733,7 +735,9 @@ body {
 }
 
 .grid-container, .grid-100, .clearfix {
+  /* <IE7> */
   *zoom: 1;
+  /* </IE7> */
 }
 
 .grid-container {

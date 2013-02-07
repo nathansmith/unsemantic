@@ -30,10 +30,6 @@
     clear: both;
   }
 
-  .grid-container, .clearfix {
-    *zoom: 1;
-  }
-
   .grid-container {
     margin-left: auto;
     margin-right: auto;
@@ -74,10 +70,6 @@
 
   .mobile-grid-100:after {
     clear: both;
-  }
-
-  .mobile-grid-100 {
-    *zoom: 1;
   }
 
   .mobile-push-5,
@@ -553,10 +545,6 @@
 
   .grid-100:after {
     clear: both;
-  }
-
-  .grid-100 {
-    *zoom: 1;
   }
 
   .push-5,
