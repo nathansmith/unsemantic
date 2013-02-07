@@ -202,13 +202,13 @@ $unsemantic-ie7-support: true !default
     //
     // [2] Fake what would normally be padding,
     //     for browsers that support box-sizing.
-    *:first-child + html & > *
+    & > *
       /* ==================================================================================================== */
       /* IE7 SUPPORT - Delete BELOW if you don't need to support IE7 */
       /* <start> */
 
-      margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "#{$gutter-half}")
-      margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "#{$gutter-half}")
+      *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "#{$gutter-half}")
+      *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "#{$gutter-half}")
 
       /* </end> */
       /* IE7 SUPPORT - Delete ABOVE if you don't need to support IE7 */

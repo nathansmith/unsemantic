@@ -86,34 +86,34 @@
   /* IE7 SUPPORT - Delete ABOVE if you don't need to support IE7 */
   /* ==================================================================================================== */
 }
-*:first-child + html .grid-5 > *,
-*:first-child + html .mobile-grid-5 > *, *:first-child + html .grid-10 > *,
-*:first-child + html .mobile-grid-10 > *, *:first-child + html .grid-15 > *,
-*:first-child + html .mobile-grid-15 > *, *:first-child + html .grid-20 > *,
-*:first-child + html .mobile-grid-20 > *, *:first-child + html .grid-25 > *,
-*:first-child + html .mobile-grid-25 > *, *:first-child + html .grid-30 > *,
-*:first-child + html .mobile-grid-30 > *, *:first-child + html .grid-35 > *,
-*:first-child + html .mobile-grid-35 > *, *:first-child + html .grid-40 > *,
-*:first-child + html .mobile-grid-40 > *, *:first-child + html .grid-45 > *,
-*:first-child + html .mobile-grid-45 > *, *:first-child + html .grid-50 > *,
-*:first-child + html .mobile-grid-50 > *, *:first-child + html .grid-55 > *,
-*:first-child + html .mobile-grid-55 > *, *:first-child + html .grid-60 > *,
-*:first-child + html .mobile-grid-60 > *, *:first-child + html .grid-65 > *,
-*:first-child + html .mobile-grid-65 > *, *:first-child + html .grid-70 > *,
-*:first-child + html .mobile-grid-70 > *, *:first-child + html .grid-75 > *,
-*:first-child + html .mobile-grid-75 > *, *:first-child + html .grid-80 > *,
-*:first-child + html .mobile-grid-80 > *, *:first-child + html .grid-85 > *,
-*:first-child + html .mobile-grid-85 > *, *:first-child + html .grid-90 > *,
-*:first-child + html .mobile-grid-90 > *, *:first-child + html .grid-95 > *,
-*:first-child + html .mobile-grid-95 > *, *:first-child + html .grid-100 > *,
-*:first-child + html .mobile-grid-100 > *, *:first-child + html .grid-33 > *,
-*:first-child + html .mobile-grid-33 > *, *:first-child + html .grid-66 > *,
-*:first-child + html .mobile-grid-66 > * {
+.grid-5 > *,
+.mobile-grid-5 > *, .grid-10 > *,
+.mobile-grid-10 > *, .grid-15 > *,
+.mobile-grid-15 > *, .grid-20 > *,
+.mobile-grid-20 > *, .grid-25 > *,
+.mobile-grid-25 > *, .grid-30 > *,
+.mobile-grid-30 > *, .grid-35 > *,
+.mobile-grid-35 > *, .grid-40 > *,
+.mobile-grid-40 > *, .grid-45 > *,
+.mobile-grid-45 > *, .grid-50 > *,
+.mobile-grid-50 > *, .grid-55 > *,
+.mobile-grid-55 > *, .grid-60 > *,
+.mobile-grid-60 > *, .grid-65 > *,
+.mobile-grid-65 > *, .grid-70 > *,
+.mobile-grid-70 > *, .grid-75 > *,
+.mobile-grid-75 > *, .grid-80 > *,
+.mobile-grid-80 > *, .grid-85 > *,
+.mobile-grid-85 > *, .grid-90 > *,
+.mobile-grid-90 > *, .grid-95 > *,
+.mobile-grid-95 > *, .grid-100 > *,
+.mobile-grid-100 > *, .grid-33 > *,
+.mobile-grid-33 > *, .grid-66 > *,
+.mobile-grid-66 > * {
   /* ==================================================================================================== */
   /* IE7 SUPPORT - Delete BELOW if you don't need to support IE7 */
   /* <start> */
-  margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "10px");
-  margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "10px");
+  *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "10px");
+  *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "10px");
   /* </end> */
   /* IE7 SUPPORT - Delete ABOVE if you don't need to support IE7 */
   /* ==================================================================================================== */
@@ -206,34 +206,34 @@ body {
   /* IE7 SUPPORT - Delete ABOVE if you don't need to support IE7 */
   /* ==================================================================================================== */
 }
-*:first-child + html .grid-5 > *,
-*:first-child + html .mobile-grid-5 > *, *:first-child + html .grid-10 > *,
-*:first-child + html .mobile-grid-10 > *, *:first-child + html .grid-15 > *,
-*:first-child + html .mobile-grid-15 > *, *:first-child + html .grid-20 > *,
-*:first-child + html .mobile-grid-20 > *, *:first-child + html .grid-25 > *,
-*:first-child + html .mobile-grid-25 > *, *:first-child + html .grid-30 > *,
-*:first-child + html .mobile-grid-30 > *, *:first-child + html .grid-35 > *,
-*:first-child + html .mobile-grid-35 > *, *:first-child + html .grid-40 > *,
-*:first-child + html .mobile-grid-40 > *, *:first-child + html .grid-45 > *,
-*:first-child + html .mobile-grid-45 > *, *:first-child + html .grid-50 > *,
-*:first-child + html .mobile-grid-50 > *, *:first-child + html .grid-55 > *,
-*:first-child + html .mobile-grid-55 > *, *:first-child + html .grid-60 > *,
-*:first-child + html .mobile-grid-60 > *, *:first-child + html .grid-65 > *,
-*:first-child + html .mobile-grid-65 > *, *:first-child + html .grid-70 > *,
-*:first-child + html .mobile-grid-70 > *, *:first-child + html .grid-75 > *,
-*:first-child + html .mobile-grid-75 > *, *:first-child + html .grid-80 > *,
-*:first-child + html .mobile-grid-80 > *, *:first-child + html .grid-85 > *,
-*:first-child + html .mobile-grid-85 > *, *:first-child + html .grid-90 > *,
-*:first-child + html .mobile-grid-90 > *, *:first-child + html .grid-95 > *,
-*:first-child + html .mobile-grid-95 > *, *:first-child + html .grid-100 > *,
-*:first-child + html .mobile-grid-100 > *, *:first-child + html .grid-33 > *,
-*:first-child + html .mobile-grid-33 > *, *:first-child + html .grid-66 > *,
-*:first-child + html .mobile-grid-66 > * {
+.grid-5 > *,
+.mobile-grid-5 > *, .grid-10 > *,
+.mobile-grid-10 > *, .grid-15 > *,
+.mobile-grid-15 > *, .grid-20 > *,
+.mobile-grid-20 > *, .grid-25 > *,
+.mobile-grid-25 > *, .grid-30 > *,
+.mobile-grid-30 > *, .grid-35 > *,
+.mobile-grid-35 > *, .grid-40 > *,
+.mobile-grid-40 > *, .grid-45 > *,
+.mobile-grid-45 > *, .grid-50 > *,
+.mobile-grid-50 > *, .grid-55 > *,
+.mobile-grid-55 > *, .grid-60 > *,
+.mobile-grid-60 > *, .grid-65 > *,
+.mobile-grid-65 > *, .grid-70 > *,
+.mobile-grid-70 > *, .grid-75 > *,
+.mobile-grid-75 > *, .grid-80 > *,
+.mobile-grid-80 > *, .grid-85 > *,
+.mobile-grid-85 > *, .grid-90 > *,
+.mobile-grid-90 > *, .grid-95 > *,
+.mobile-grid-95 > *, .grid-100 > *,
+.mobile-grid-100 > *, .grid-33 > *,
+.mobile-grid-33 > *, .grid-66 > *,
+.mobile-grid-66 > * {
   /* ==================================================================================================== */
   /* IE7 SUPPORT - Delete BELOW if you don't need to support IE7 */
   /* <start> */
-  margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "10px");
-  margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "10px");
+  *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "10px");
+  *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "10px");
   /* </end> */
   /* IE7 SUPPORT - Delete ABOVE if you don't need to support IE7 */
   /* ==================================================================================================== */
