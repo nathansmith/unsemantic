@@ -56,7 +56,7 @@
 .mobile-grid-5 {
   width: 5%;
   /* <IE7> */
-  *width: expression(Math.floor(0.05 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.05 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -71,21 +71,21 @@
 .mobile-push-5 {
   left: 5%;
   /* <IE7> */
-  *left: expression(Math.floor(0.05 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.05 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-5 {
   left: -5%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.05 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.05 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-10 {
   width: 10%;
   /* <IE7> */
-  *width: expression(Math.floor(0.1 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.1 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -100,21 +100,21 @@
 .mobile-push-10 {
   left: 10%;
   /* <IE7> */
-  *left: expression(Math.floor(0.1 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.1 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-10 {
   left: -10%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.1 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.1 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-15 {
   width: 15%;
   /* <IE7> */
-  *width: expression(Math.floor(0.15 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.15 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -129,21 +129,21 @@
 .mobile-push-15 {
   left: 15%;
   /* <IE7> */
-  *left: expression(Math.floor(0.15 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.15 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-15 {
   left: -15%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.15 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.15 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-20 {
   width: 20%;
   /* <IE7> */
-  *width: expression(Math.floor(0.2 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.2 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -158,21 +158,21 @@
 .mobile-push-20 {
   left: 20%;
   /* <IE7> */
-  *left: expression(Math.floor(0.2 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.2 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-20 {
   left: -20%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.2 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.2 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-25 {
   width: 25%;
   /* <IE7> */
-  *width: expression(Math.floor(0.25 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.25 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -187,21 +187,21 @@
 .mobile-push-25 {
   left: 25%;
   /* <IE7> */
-  *left: expression(Math.floor(0.25 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.25 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-25 {
   left: -25%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.25 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.25 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-30 {
   width: 30%;
   /* <IE7> */
-  *width: expression(Math.floor(0.3 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.3 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -216,21 +216,21 @@
 .mobile-push-30 {
   left: 30%;
   /* <IE7> */
-  *left: expression(Math.floor(0.3 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.3 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-30 {
   left: -30%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.3 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.3 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-35 {
   width: 35%;
   /* <IE7> */
-  *width: expression(Math.floor(0.35 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.35 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -245,21 +245,21 @@
 .mobile-push-35 {
   left: 35%;
   /* <IE7> */
-  *left: expression(Math.floor(0.35 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.35 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-35 {
   left: -35%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.35 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.35 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-40 {
   width: 40%;
   /* <IE7> */
-  *width: expression(Math.floor(0.4 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.4 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -274,21 +274,21 @@
 .mobile-push-40 {
   left: 40%;
   /* <IE7> */
-  *left: expression(Math.floor(0.4 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.4 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-40 {
   left: -40%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.4 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.4 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-45 {
   width: 45%;
   /* <IE7> */
-  *width: expression(Math.floor(0.45 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.45 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -303,21 +303,21 @@
 .mobile-push-45 {
   left: 45%;
   /* <IE7> */
-  *left: expression(Math.floor(0.45 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.45 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-45 {
   left: -45%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.45 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.45 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-50 {
   width: 50%;
   /* <IE7> */
-  *width: expression(Math.floor(0.5 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.5 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -332,21 +332,21 @@
 .mobile-push-50 {
   left: 50%;
   /* <IE7> */
-  *left: expression(Math.floor(0.5 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.5 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-50 {
   left: -50%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.5 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.5 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-55 {
   width: 55%;
   /* <IE7> */
-  *width: expression(Math.floor(0.55 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.55 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -361,21 +361,21 @@
 .mobile-push-55 {
   left: 55%;
   /* <IE7> */
-  *left: expression(Math.floor(0.55 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.55 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-55 {
   left: -55%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.55 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.55 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-60 {
   width: 60%;
   /* <IE7> */
-  *width: expression(Math.floor(0.6 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.6 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -390,21 +390,21 @@
 .mobile-push-60 {
   left: 60%;
   /* <IE7> */
-  *left: expression(Math.floor(0.6 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.6 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-60 {
   left: -60%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.6 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.6 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-65 {
   width: 65%;
   /* <IE7> */
-  *width: expression(Math.floor(0.65 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.65 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -419,21 +419,21 @@
 .mobile-push-65 {
   left: 65%;
   /* <IE7> */
-  *left: expression(Math.floor(0.65 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.65 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-65 {
   left: -65%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.65 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.65 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-70 {
   width: 70%;
   /* <IE7> */
-  *width: expression(Math.floor(0.7 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.7 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -448,21 +448,21 @@
 .mobile-push-70 {
   left: 70%;
   /* <IE7> */
-  *left: expression(Math.floor(0.7 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.7 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-70 {
   left: -70%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.7 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.7 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-75 {
   width: 75%;
   /* <IE7> */
-  *width: expression(Math.floor(0.75 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.75 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -477,21 +477,21 @@
 .mobile-push-75 {
   left: 75%;
   /* <IE7> */
-  *left: expression(Math.floor(0.75 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.75 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-75 {
   left: -75%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.75 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.75 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-80 {
   width: 80%;
   /* <IE7> */
-  *width: expression(Math.floor(0.8 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.8 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -506,21 +506,21 @@
 .mobile-push-80 {
   left: 80%;
   /* <IE7> */
-  *left: expression(Math.floor(0.8 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.8 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-80 {
   left: -80%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.8 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.8 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-85 {
   width: 85%;
   /* <IE7> */
-  *width: expression(Math.floor(0.85 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.85 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -535,21 +535,21 @@
 .mobile-push-85 {
   left: 85%;
   /* <IE7> */
-  *left: expression(Math.floor(0.85 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.85 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-85 {
   left: -85%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.85 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.85 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-90 {
   width: 90%;
   /* <IE7> */
-  *width: expression(Math.floor(0.9 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.9 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -564,21 +564,21 @@
 .mobile-push-90 {
   left: 90%;
   /* <IE7> */
-  *left: expression(Math.floor(0.9 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.9 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-90 {
   left: -90%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.9 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.9 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-95 {
   width: 95%;
   /* <IE7> */
-  *width: expression(Math.floor(0.95 * (this.parentNode.offsetWidth - 20)) + "px");
+  *width: expression(Math.floor(0.95 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
@@ -593,19 +593,22 @@
 .mobile-push-95 {
   left: 95%;
   /* <IE7> */
-  *left: expression(Math.floor(0.95 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.95 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-95 {
   left: -95%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.95 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.95 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-33 {
   width: 33.33333%;
+  /* <IE7> */
+  *width: expression(Math.floor(0.33333 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
+  /* </IE7> */
 }
 
 .mobile-prefix-33 {
@@ -619,19 +622,22 @@
 .mobile-push-33 {
   left: 33.33333%;
   /* <IE7> */
-  *left: expression(Math.floor(0.33333 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.33333 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-33 {
   left: -33.33333%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.33333 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.33333 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-grid-66 {
   width: 66.66667%;
+  /* <IE7> */
+  *width: expression(Math.floor(0.66667 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
+  /* </IE7> */
 }
 
 .mobile-prefix-66 {
@@ -645,14 +651,14 @@
 .mobile-push-66 {
   left: 66.66667%;
   /* <IE7> */
-  *left: expression(Math.floor(0.66667 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(0.66667 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
 .mobile-pull-66 {
   left: -66.66667%;
   /* <IE7> */
-  *left: expression(Math.floor(-0.66667 * (this.parentNode.offsetWidth - 20)) + "px");
+  *left: expression(Math.floor(-0.66667 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 

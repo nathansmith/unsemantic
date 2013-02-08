@@ -23,9 +23,7 @@ $unsemantic-ie7-support: true !default
 
 $container-max-width: 1200px !default
 
-$gutter-half-num: 10 !default
-
-$gutter-half: #{$gutter-half-num}px !default
+$gutter-half: 10px !default
 
 $lang-forward: left !default
 
@@ -99,8 +97,8 @@ $lang-reverse: right !default
     //     for browsers that support box-sizing.
     & > *
       /* <IE7> */
-      *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "#{$gutter-half}")
-      *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block") && "#{$gutter-half}")
+      *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
+      *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
       /* </IE7> */
 
 // `Push & Pull, to rearrange column order (for potential "SEO").
@@ -143,7 +141,7 @@ $lang-reverse: right !default
 
     @if $unsemantic-ie7-support == true
       /* <IE7> */
-      *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
+      *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
       /* </IE7> */
 
   %prefix-#{$num}
@@ -157,7 +155,7 @@ $lang-reverse: right !default
 
     @if $unsemantic-ie7-support == true
       /* <IE7> */
-      *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
+      *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
       /* </IE7> */
 
   %pull-#{$num}
@@ -165,7 +163,7 @@ $lang-reverse: right !default
 
     @if $unsemantic-ie7-support == true
       /* <IE7> */
-      *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
+      *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
       /* </IE7> */
 
 //
@@ -183,6 +181,11 @@ $lang-reverse: right !default
     @extend %grid-columns
     width: $percent
 
+    @if $unsemantic-ie7-support == true
+      /* <IE7> */
+      *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+      /* </IE7> */
+
   // Prefix, to add extra columns before.
   %prefix-#{$num}
     margin-#{$lang-forward}: $percent
@@ -197,7 +200,7 @@ $lang-reverse: right !default
 
     @if $unsemantic-ie7-support == true
       /* <IE7> */
-      *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
+      *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
       /* </IE7> */
 
   %pull-#{$num}
@@ -205,7 +208,7 @@ $lang-reverse: right !default
 
     @if $unsemantic-ie7-support == true
       /* <IE7> */
-      *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - #{$gutter-half-num * 2})) + "px")
+      *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
       /* </IE7> */
 
 //

@@ -49,6 +49,7 @@ kbd,
 label,
 legend,
 li,
+main,
 mark,
 menu,
 meter,
@@ -106,6 +107,7 @@ figure,
 footer,
 header,
 hgroup,
+main,
 menu,
 nav,
 section {
@@ -124,8 +126,8 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
-ol,
-ul {
+ul,
+ol {
   list-style: none;
 }
 
