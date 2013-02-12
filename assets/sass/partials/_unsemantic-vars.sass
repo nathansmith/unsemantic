@@ -58,7 +58,7 @@ $lang-reverse: right !default
 %clearfix:after
   clear: both
 
-@if $unsemantic-ie7-support == true
+@if $unsemantic-ie7-support
   %clearfix
     /* <IE7> */
     *zoom: 1
@@ -83,7 +83,7 @@ $lang-reverse: right !default
   padding-left: $gutter-half
   padding-right: $gutter-half
 
-  @if $unsemantic-ie7-support == true
+  @if $unsemantic-ie7-support
     // [1] Remove padding, since IE7 doesn't
     //     support "box-sizing: border-box".
 
@@ -123,7 +123,7 @@ $lang-reverse: right !default
 // `Grid columns.
 //----------------------------------------------------------------------------------------------------
 
-%grid-columns
+%grid-float
   float: $lang-forward
 
 //
@@ -136,10 +136,10 @@ $lang-reverse: right !default
   $percent: $num * 1%
 
   %grid-#{$num}
-    @extend %grid-columns
+    @extend %grid-float
     width: $percent
 
-    @if $unsemantic-ie7-support == true
+    @if $unsemantic-ie7-support
       /* <IE7> */
       *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
       /* </IE7> */
@@ -153,7 +153,7 @@ $lang-reverse: right !default
   %push-#{$num}
     #{$lang-forward}: $percent
 
-    @if $unsemantic-ie7-support == true
+    @if $unsemantic-ie7-support
       /* <IE7> */
       *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
       /* </IE7> */
@@ -161,7 +161,7 @@ $lang-reverse: right !default
   %pull-#{$num}
     #{$lang-forward}: $percent * -1
 
-    @if $unsemantic-ie7-support == true
+    @if $unsemantic-ie7-support
       /* <IE7> */
       *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
       /* </IE7> */
@@ -178,10 +178,10 @@ $lang-reverse: right !default
 
   // Percentage based widths.
   %grid-#{$num}
-    @extend %grid-columns
+    @extend %grid-float
     width: $percent
 
-    @if $unsemantic-ie7-support == true
+    @if $unsemantic-ie7-support
       /* <IE7> */
       *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
       /* </IE7> */
@@ -198,7 +198,7 @@ $lang-reverse: right !default
   %push-#{$num}
     #{$lang-forward}: $percent
 
-    @if $unsemantic-ie7-support == true
+    @if $unsemantic-ie7-support
       /* <IE7> */
       *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
       /* </IE7> */
@@ -206,7 +206,7 @@ $lang-reverse: right !default
   %pull-#{$num}
     #{$lang-forward}: $percent * -1
 
-    @if $unsemantic-ie7-support == true
+    @if $unsemantic-ie7-support
       /* <IE7> */
       *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
       /* </IE7> */
