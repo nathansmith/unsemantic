@@ -137,6 +137,7 @@ $lang-reverse: right !default
 
   %grid-#{$num}
     @extend %grid-columns
+    @extend %grid-columns-all
     width: $percent
 
     @if $unsemantic-ie7-support == true
@@ -217,5 +218,6 @@ $lang-reverse: right !default
 
 %grid-100
   @extend %clearfix
+  @extend %grid-columns-all
   clear: both
   width: 100%
