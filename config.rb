@@ -7,3 +7,4 @@ javascripts_dir = 'assets/javascripts'
 relative_assets = true
 line_comments = false
 # output_style = :compressed
+disable_warnings = true
