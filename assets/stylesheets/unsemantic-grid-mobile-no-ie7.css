@@ -43,11 +43,8 @@
   display: none !important;
 }
 
-.mobile-grid-5, .mobile-grid-10, .mobile-grid-15, .mobile-grid-20, .mobile-grid-25, .mobile-grid-30, .mobile-grid-35, .mobile-grid-40, .mobile-grid-45, .mobile-grid-50, .mobile-grid-55, .mobile-grid-60, .mobile-grid-65, .mobile-grid-70, .mobile-grid-75, .mobile-grid-80, .mobile-grid-85, .mobile-grid-90, .mobile-grid-95, .mobile-grid-33, .mobile-grid-66 {
-  float: left;
-}
-
 .mobile-grid-5 {
+  float: left;
   width: 5%;
 }
 
@@ -68,6 +65,7 @@
 }
 
 .mobile-grid-10 {
+  float: left;
   width: 10%;
 }
 
@@ -88,6 +86,7 @@
 }
 
 .mobile-grid-15 {
+  float: left;
   width: 15%;
 }
 
@@ -108,6 +107,7 @@
 }
 
 .mobile-grid-20 {
+  float: left;
   width: 20%;
 }
 
@@ -128,6 +128,7 @@
 }
 
 .mobile-grid-25 {
+  float: left;
   width: 25%;
 }
 
@@ -148,6 +149,7 @@
 }
 
 .mobile-grid-30 {
+  float: left;
   width: 30%;
 }
 
@@ -168,6 +170,7 @@
 }
 
 .mobile-grid-35 {
+  float: left;
   width: 35%;
 }
 
@@ -188,6 +191,7 @@
 }
 
 .mobile-grid-40 {
+  float: left;
   width: 40%;
 }
 
@@ -208,6 +212,7 @@
 }
 
 .mobile-grid-45 {
+  float: left;
   width: 45%;
 }
 
@@ -228,6 +233,7 @@
 }
 
 .mobile-grid-50 {
+  float: left;
   width: 50%;
 }
 
@@ -248,6 +254,7 @@
 }
 
 .mobile-grid-55 {
+  float: left;
   width: 55%;
 }
 
@@ -268,6 +275,7 @@
 }
 
 .mobile-grid-60 {
+  float: left;
   width: 60%;
 }
 
@@ -288,6 +296,7 @@
 }
 
 .mobile-grid-65 {
+  float: left;
   width: 65%;
 }
 
@@ -308,6 +317,7 @@
 }
 
 .mobile-grid-70 {
+  float: left;
   width: 70%;
 }
 
@@ -328,6 +338,7 @@
 }
 
 .mobile-grid-75 {
+  float: left;
   width: 75%;
 }
 
@@ -348,6 +359,7 @@
 }
 
 .mobile-grid-80 {
+  float: left;
   width: 80%;
 }
 
@@ -368,6 +380,7 @@
 }
 
 .mobile-grid-85 {
+  float: left;
   width: 85%;
 }
 
@@ -388,6 +401,7 @@
 }
 
 .mobile-grid-90 {
+  float: left;
   width: 90%;
 }
 
@@ -408,6 +422,7 @@
 }
 
 .mobile-grid-95 {
+  float: left;
   width: 95%;
 }
 
@@ -428,6 +443,7 @@
 }
 
 .mobile-grid-33 {
+  float: left;
   width: 33.33333%;
 }
 
@@ -448,6 +464,7 @@
 }
 
 .mobile-grid-66 {
+  float: left;
   width: 66.66667%;
 }
 

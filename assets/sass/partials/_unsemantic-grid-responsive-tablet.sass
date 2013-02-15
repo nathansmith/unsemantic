@@ -1,0 +1,20 @@
+/* ================================================================== */
+/* This file has a mobile-to-tablet, and tablet-to-desktop breakpoint */
+/* ================================================================== */
+
+$media-mobile: 767px !default
+$media-desktop: 1025px !default
+
+@import "unsemantic-ie-snap"
+
+@media screen
+  @import "unsemantic-grid-base-tablet"
+
+@media screen and (max-width: $media-mobile)
+  @import "unsemantic-grid-mobile"
+
+@media screen and (min-width: $media-mobile) and (max-width: $media-desktop)
+  @import "unsemantic-grid-tablet"
+
+@media screen and (min-width: $media-desktop)
+  @import "unsemantic-grid-desktop"

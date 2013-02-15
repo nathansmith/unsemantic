@@ -43,11 +43,8 @@
   display: none !important;
 }
 
-.grid-5, .grid-10, .grid-15, .grid-20, .grid-25, .grid-30, .grid-35, .grid-40, .grid-45, .grid-50, .grid-55, .grid-60, .grid-65, .grid-70, .grid-75, .grid-80, .grid-85, .grid-90, .grid-95, .grid-33, .grid-66 {
-  float: right;
-}
-
 .grid-5 {
+  float: right;
   width: 5%;
 }
 
@@ -68,6 +65,7 @@
 }
 
 .grid-10 {
+  float: right;
   width: 10%;
 }
 
@@ -88,6 +86,7 @@
 }
 
 .grid-15 {
+  float: right;
   width: 15%;
 }
 
@@ -108,6 +107,7 @@
 }
 
 .grid-20 {
+  float: right;
   width: 20%;
 }
 
@@ -128,6 +128,7 @@
 }
 
 .grid-25 {
+  float: right;
   width: 25%;
 }
 
@@ -148,6 +149,7 @@
 }
 
 .grid-30 {
+  float: right;
   width: 30%;
 }
 
@@ -168,6 +170,7 @@
 }
 
 .grid-35 {
+  float: right;
   width: 35%;
 }
 
@@ -188,6 +191,7 @@
 }
 
 .grid-40 {
+  float: right;
   width: 40%;
 }
 
@@ -208,6 +212,7 @@
 }
 
 .grid-45 {
+  float: right;
   width: 45%;
 }
 
@@ -228,6 +233,7 @@
 }
 
 .grid-50 {
+  float: right;
   width: 50%;
 }
 
@@ -248,6 +254,7 @@
 }
 
 .grid-55 {
+  float: right;
   width: 55%;
 }
 
@@ -268,6 +275,7 @@
 }
 
 .grid-60 {
+  float: right;
   width: 60%;
 }
 
@@ -288,6 +296,7 @@
 }
 
 .grid-65 {
+  float: right;
   width: 65%;
 }
 
@@ -308,6 +317,7 @@
 }
 
 .grid-70 {
+  float: right;
   width: 70%;
 }
 
@@ -328,6 +338,7 @@
 }
 
 .grid-75 {
+  float: right;
   width: 75%;
 }
 
@@ -348,6 +359,7 @@
 }
 
 .grid-80 {
+  float: right;
   width: 80%;
 }
 
@@ -368,6 +380,7 @@
 }
 
 .grid-85 {
+  float: right;
   width: 85%;
 }
 
@@ -388,6 +401,7 @@
 }
 
 .grid-90 {
+  float: right;
   width: 90%;
 }
 
@@ -408,6 +422,7 @@
 }
 
 .grid-95 {
+  float: right;
   width: 95%;
 }
 
@@ -428,6 +443,7 @@
 }
 
 .grid-33 {
+  float: right;
   width: 33.33333%;
 }
 
@@ -448,6 +464,7 @@
 }
 
 .grid-66 {
+  float: right;
   width: 66.66667%;
 }
 

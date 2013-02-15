@@ -123,9 +123,6 @@ $lang-reverse: right !default
 // `Grid columns.
 //----------------------------------------------------------------------------------------------------
 
-%grid-float
-  float: $lang-forward
-
 //
 // For 5 through 95 percent.
 //
@@ -136,7 +133,7 @@ $lang-reverse: right !default
   $percent: $num * 1%
 
   %grid-#{$num}
-    @extend %grid-float
+    float: $lang-forward
     width: $percent
 
     @if $unsemantic-ie7-support
@@ -178,7 +175,7 @@ $lang-reverse: right !default
 
   // Percentage based widths.
   %grid-#{$num}
-    @extend %grid-float
+    float: $lang-forward
     width: $percent
 
     @if $unsemantic-ie7-support

@@ -1,0 +1,96 @@
+@import "unsemantic-vars"
+
+// `Hide on tablet.
+//----------------------------------------------------------------------------------------------------
+
+.hide-on-tablet
+  @extend %hide
+
+// `Grid columns.
+//----------------------------------------------------------------------------------------------------
+
+//
+// Full width, just line-break.
+//
+
+.tablet-grid-100
+  @extend %grid-100
+
+//
+// For 5 through 95 percent.
+//
+
+@for $i from 1 through 19
+  $num: $i * 5
+
+  // Percentage based widths.
+  .tablet-grid-#{$num}
+    @extend %grid-#{$num}
+
+  // Prefix, to add extra columns before.
+  .tablet-prefix-#{$num}
+    @extend %prefix-#{$num}
+
+  // Suffix, to add extra columns after.
+  .tablet-suffix-#{$num}
+    @extend %suffix-#{$num}
+
+  // Push, to rearrange column order (for potential "SEO").
+  .tablet-push-#{$num}
+    @extend %push-#{$num}
+
+  // Pull, to rearrange column order (for potential "SEO").
+  .tablet-pull-#{$num}
+    @extend %pull-#{$num}
+
+//
+// For one-third and two-thirds.
+//
+
+@for $i from 1 through 2
+  $num: $i * 33
+
+  // Percentage based widths.
+  .tablet-grid-#{$num}
+    @extend %grid-#{$num}
+
+  // Prefix, to add extra columns before.
+  .tablet-prefix-#{$num}
+    @extend %prefix-#{$num}
+
+  // Suffix, to add extra columns after.
+  .tablet-suffix-#{$num}
+    @extend %suffix-#{$num}
+
+  // Push, to rearrange column order (for potential "SEO").
+  .tablet-push-#{$num}
+    @extend %push-#{$num}
+
+  // Pull, to rearrange column order (for potential "SEO").
+  .tablet-pull-#{$num}
+    @extend %pull-#{$num}
+
+// `Push & Pull, to rearrange column order (for potential "SEO").
+//----------------------------------------------------------------------------------------------------
+
+//
+// For 5 through 95 percent.
+//
+
+@for $i from 1 through 19
+  $num: $i * 5
+
+  .tablet-push-#{$num},
+  .tablet-pull-#{$num}
+    @extend %grid-columns-push-pull
+
+//
+// For one-third and two-thirds.
+//
+
+@for $i from 1 through 2
+  $num: $i * 33
+
+  .tablet-push-#{$num},
+  .tablet-pull-#{$num}
+    @extend %grid-columns-push-pull

@@ -1,5 +1,5 @@
-.grid-100:before,
-.grid-100:after {
+.tablet-grid-100:before,
+.tablet-grid-100:after {
   content: ".";
   display: block;
   overflow: hidden;
@@ -10,46 +10,46 @@
   height: 0;
 }
 
-.grid-100:after {
+.tablet-grid-100:after {
   clear: both;
 }
 
-.grid-100 {
+.tablet-grid-100 {
   /* <IE7> */
   *zoom: 1;
   /* </IE7> */
 }
 
-.push-5,
-.pull-5, .push-10,
-.pull-10, .push-15,
-.pull-15, .push-20,
-.pull-20, .push-25,
-.pull-25, .push-30,
-.pull-30, .push-35,
-.pull-35, .push-40,
-.pull-40, .push-45,
-.pull-45, .push-50,
-.pull-50, .push-55,
-.pull-55, .push-60,
-.pull-60, .push-65,
-.pull-65, .push-70,
-.pull-70, .push-75,
-.pull-75, .push-80,
-.pull-80, .push-85,
-.pull-85, .push-90,
-.pull-90, .push-95,
-.pull-95, .push-33,
-.pull-33, .push-66,
-.pull-66 {
+.tablet-push-5,
+.tablet-pull-5, .tablet-push-10,
+.tablet-pull-10, .tablet-push-15,
+.tablet-pull-15, .tablet-push-20,
+.tablet-pull-20, .tablet-push-25,
+.tablet-pull-25, .tablet-push-30,
+.tablet-pull-30, .tablet-push-35,
+.tablet-pull-35, .tablet-push-40,
+.tablet-pull-40, .tablet-push-45,
+.tablet-pull-45, .tablet-push-50,
+.tablet-pull-50, .tablet-push-55,
+.tablet-pull-55, .tablet-push-60,
+.tablet-pull-60, .tablet-push-65,
+.tablet-pull-65, .tablet-push-70,
+.tablet-pull-70, .tablet-push-75,
+.tablet-pull-75, .tablet-push-80,
+.tablet-pull-80, .tablet-push-85,
+.tablet-pull-85, .tablet-push-90,
+.tablet-pull-90, .tablet-push-95,
+.tablet-pull-95, .tablet-push-33,
+.tablet-pull-33, .tablet-push-66,
+.tablet-pull-66 {
   position: relative;
 }
 
-.hide-on-desktop {
+.hide-on-tablet {
   display: none !important;
 }
 
-.grid-5 {
+.tablet-grid-5 {
   float: left;
   width: 5%;
   /* <IE7> */
@@ -57,29 +57,29 @@
   /* </IE7> */
 }
 
-.prefix-5 {
+.tablet-prefix-5 {
   margin-left: 5%;
 }
 
-.suffix-5 {
+.tablet-suffix-5 {
   margin-right: 5%;
 }
 
-.push-5 {
+.tablet-push-5 {
   left: 5%;
   /* <IE7> */
   *left: expression(Math.floor(0.05 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-5 {
+.tablet-pull-5 {
   left: -5%;
   /* <IE7> */
   *left: expression(Math.floor(-0.05 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-10 {
+.tablet-grid-10 {
   float: left;
   width: 10%;
   /* <IE7> */
@@ -87,29 +87,29 @@
   /* </IE7> */
 }
 
-.prefix-10 {
+.tablet-prefix-10 {
   margin-left: 10%;
 }
 
-.suffix-10 {
+.tablet-suffix-10 {
   margin-right: 10%;
 }
 
-.push-10 {
+.tablet-push-10 {
   left: 10%;
   /* <IE7> */
   *left: expression(Math.floor(0.1 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-10 {
+.tablet-pull-10 {
   left: -10%;
   /* <IE7> */
   *left: expression(Math.floor(-0.1 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-15 {
+.tablet-grid-15 {
   float: left;
   width: 15%;
   /* <IE7> */
@@ -117,29 +117,29 @@
   /* </IE7> */
 }
 
-.prefix-15 {
+.tablet-prefix-15 {
   margin-left: 15%;
 }
 
-.suffix-15 {
+.tablet-suffix-15 {
   margin-right: 15%;
 }
 
-.push-15 {
+.tablet-push-15 {
   left: 15%;
   /* <IE7> */
   *left: expression(Math.floor(0.15 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-15 {
+.tablet-pull-15 {
   left: -15%;
   /* <IE7> */
   *left: expression(Math.floor(-0.15 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-20 {
+.tablet-grid-20 {
   float: left;
   width: 20%;
   /* <IE7> */
@@ -147,29 +147,29 @@
   /* </IE7> */
 }
 
-.prefix-20 {
+.tablet-prefix-20 {
   margin-left: 20%;
 }
 
-.suffix-20 {
+.tablet-suffix-20 {
   margin-right: 20%;
 }
 
-.push-20 {
+.tablet-push-20 {
   left: 20%;
   /* <IE7> */
   *left: expression(Math.floor(0.2 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-20 {
+.tablet-pull-20 {
   left: -20%;
   /* <IE7> */
   *left: expression(Math.floor(-0.2 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-25 {
+.tablet-grid-25 {
   float: left;
   width: 25%;
   /* <IE7> */
@@ -177,29 +177,29 @@
   /* </IE7> */
 }
 
-.prefix-25 {
+.tablet-prefix-25 {
   margin-left: 25%;
 }
 
-.suffix-25 {
+.tablet-suffix-25 {
   margin-right: 25%;
 }
 
-.push-25 {
+.tablet-push-25 {
   left: 25%;
   /* <IE7> */
   *left: expression(Math.floor(0.25 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-25 {
+.tablet-pull-25 {
   left: -25%;
   /* <IE7> */
   *left: expression(Math.floor(-0.25 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-30 {
+.tablet-grid-30 {
   float: left;
   width: 30%;
   /* <IE7> */
@@ -207,29 +207,29 @@
   /* </IE7> */
 }
 
-.prefix-30 {
+.tablet-prefix-30 {
   margin-left: 30%;
 }
 
-.suffix-30 {
+.tablet-suffix-30 {
   margin-right: 30%;
 }
 
-.push-30 {
+.tablet-push-30 {
   left: 30%;
   /* <IE7> */
   *left: expression(Math.floor(0.3 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-30 {
+.tablet-pull-30 {
   left: -30%;
   /* <IE7> */
   *left: expression(Math.floor(-0.3 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-35 {
+.tablet-grid-35 {
   float: left;
   width: 35%;
   /* <IE7> */
@@ -237,29 +237,29 @@
   /* </IE7> */
 }
 
-.prefix-35 {
+.tablet-prefix-35 {
   margin-left: 35%;
 }
 
-.suffix-35 {
+.tablet-suffix-35 {
   margin-right: 35%;
 }
 
-.push-35 {
+.tablet-push-35 {
   left: 35%;
   /* <IE7> */
   *left: expression(Math.floor(0.35 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-35 {
+.tablet-pull-35 {
   left: -35%;
   /* <IE7> */
   *left: expression(Math.floor(-0.35 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-40 {
+.tablet-grid-40 {
   float: left;
   width: 40%;
   /* <IE7> */
@@ -267,29 +267,29 @@
   /* </IE7> */
 }
 
-.prefix-40 {
+.tablet-prefix-40 {
   margin-left: 40%;
 }
 
-.suffix-40 {
+.tablet-suffix-40 {
   margin-right: 40%;
 }
 
-.push-40 {
+.tablet-push-40 {
   left: 40%;
   /* <IE7> */
   *left: expression(Math.floor(0.4 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-40 {
+.tablet-pull-40 {
   left: -40%;
   /* <IE7> */
   *left: expression(Math.floor(-0.4 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-45 {
+.tablet-grid-45 {
   float: left;
   width: 45%;
   /* <IE7> */
@@ -297,29 +297,29 @@
   /* </IE7> */
 }
 
-.prefix-45 {
+.tablet-prefix-45 {
   margin-left: 45%;
 }
 
-.suffix-45 {
+.tablet-suffix-45 {
   margin-right: 45%;
 }
 
-.push-45 {
+.tablet-push-45 {
   left: 45%;
   /* <IE7> */
   *left: expression(Math.floor(0.45 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-45 {
+.tablet-pull-45 {
   left: -45%;
   /* <IE7> */
   *left: expression(Math.floor(-0.45 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-50 {
+.tablet-grid-50 {
   float: left;
   width: 50%;
   /* <IE7> */
@@ -327,29 +327,29 @@
   /* </IE7> */
 }
 
-.prefix-50 {
+.tablet-prefix-50 {
   margin-left: 50%;
 }
 
-.suffix-50 {
+.tablet-suffix-50 {
   margin-right: 50%;
 }
 
-.push-50 {
+.tablet-push-50 {
   left: 50%;
   /* <IE7> */
   *left: expression(Math.floor(0.5 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-50 {
+.tablet-pull-50 {
   left: -50%;
   /* <IE7> */
   *left: expression(Math.floor(-0.5 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-55 {
+.tablet-grid-55 {
   float: left;
   width: 55%;
   /* <IE7> */
@@ -357,29 +357,29 @@
   /* </IE7> */
 }
 
-.prefix-55 {
+.tablet-prefix-55 {
   margin-left: 55%;
 }
 
-.suffix-55 {
+.tablet-suffix-55 {
   margin-right: 55%;
 }
 
-.push-55 {
+.tablet-push-55 {
   left: 55%;
   /* <IE7> */
   *left: expression(Math.floor(0.55 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-55 {
+.tablet-pull-55 {
   left: -55%;
   /* <IE7> */
   *left: expression(Math.floor(-0.55 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-60 {
+.tablet-grid-60 {
   float: left;
   width: 60%;
   /* <IE7> */
@@ -387,29 +387,29 @@
   /* </IE7> */
 }
 
-.prefix-60 {
+.tablet-prefix-60 {
   margin-left: 60%;
 }
 
-.suffix-60 {
+.tablet-suffix-60 {
   margin-right: 60%;
 }
 
-.push-60 {
+.tablet-push-60 {
   left: 60%;
   /* <IE7> */
   *left: expression(Math.floor(0.6 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-60 {
+.tablet-pull-60 {
   left: -60%;
   /* <IE7> */
   *left: expression(Math.floor(-0.6 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-65 {
+.tablet-grid-65 {
   float: left;
   width: 65%;
   /* <IE7> */
@@ -417,29 +417,29 @@
   /* </IE7> */
 }
 
-.prefix-65 {
+.tablet-prefix-65 {
   margin-left: 65%;
 }
 
-.suffix-65 {
+.tablet-suffix-65 {
   margin-right: 65%;
 }
 
-.push-65 {
+.tablet-push-65 {
   left: 65%;
   /* <IE7> */
   *left: expression(Math.floor(0.65 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-65 {
+.tablet-pull-65 {
   left: -65%;
   /* <IE7> */
   *left: expression(Math.floor(-0.65 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-70 {
+.tablet-grid-70 {
   float: left;
   width: 70%;
   /* <IE7> */
@@ -447,29 +447,29 @@
   /* </IE7> */
 }
 
-.prefix-70 {
+.tablet-prefix-70 {
   margin-left: 70%;
 }
 
-.suffix-70 {
+.tablet-suffix-70 {
   margin-right: 70%;
 }
 
-.push-70 {
+.tablet-push-70 {
   left: 70%;
   /* <IE7> */
   *left: expression(Math.floor(0.7 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-70 {
+.tablet-pull-70 {
   left: -70%;
   /* <IE7> */
   *left: expression(Math.floor(-0.7 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-75 {
+.tablet-grid-75 {
   float: left;
   width: 75%;
   /* <IE7> */
@@ -477,29 +477,29 @@
   /* </IE7> */
 }
 
-.prefix-75 {
+.tablet-prefix-75 {
   margin-left: 75%;
 }
 
-.suffix-75 {
+.tablet-suffix-75 {
   margin-right: 75%;
 }
 
-.push-75 {
+.tablet-push-75 {
   left: 75%;
   /* <IE7> */
   *left: expression(Math.floor(0.75 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-75 {
+.tablet-pull-75 {
   left: -75%;
   /* <IE7> */
   *left: expression(Math.floor(-0.75 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-80 {
+.tablet-grid-80 {
   float: left;
   width: 80%;
   /* <IE7> */
@@ -507,29 +507,29 @@
   /* </IE7> */
 }
 
-.prefix-80 {
+.tablet-prefix-80 {
   margin-left: 80%;
 }
 
-.suffix-80 {
+.tablet-suffix-80 {
   margin-right: 80%;
 }
 
-.push-80 {
+.tablet-push-80 {
   left: 80%;
   /* <IE7> */
   *left: expression(Math.floor(0.8 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-80 {
+.tablet-pull-80 {
   left: -80%;
   /* <IE7> */
   *left: expression(Math.floor(-0.8 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-85 {
+.tablet-grid-85 {
   float: left;
   width: 85%;
   /* <IE7> */
@@ -537,29 +537,29 @@
   /* </IE7> */
 }
 
-.prefix-85 {
+.tablet-prefix-85 {
   margin-left: 85%;
 }
 
-.suffix-85 {
+.tablet-suffix-85 {
   margin-right: 85%;
 }
 
-.push-85 {
+.tablet-push-85 {
   left: 85%;
   /* <IE7> */
   *left: expression(Math.floor(0.85 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-85 {
+.tablet-pull-85 {
   left: -85%;
   /* <IE7> */
   *left: expression(Math.floor(-0.85 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-90 {
+.tablet-grid-90 {
   float: left;
   width: 90%;
   /* <IE7> */
@@ -567,29 +567,29 @@
   /* </IE7> */
 }
 
-.prefix-90 {
+.tablet-prefix-90 {
   margin-left: 90%;
 }
 
-.suffix-90 {
+.tablet-suffix-90 {
   margin-right: 90%;
 }
 
-.push-90 {
+.tablet-push-90 {
   left: 90%;
   /* <IE7> */
   *left: expression(Math.floor(0.9 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-90 {
+.tablet-pull-90 {
   left: -90%;
   /* <IE7> */
   *left: expression(Math.floor(-0.9 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-95 {
+.tablet-grid-95 {
   float: left;
   width: 95%;
   /* <IE7> */
@@ -597,29 +597,29 @@
   /* </IE7> */
 }
 
-.prefix-95 {
+.tablet-prefix-95 {
   margin-left: 95%;
 }
 
-.suffix-95 {
+.tablet-suffix-95 {
   margin-right: 95%;
 }
 
-.push-95 {
+.tablet-push-95 {
   left: 95%;
   /* <IE7> */
   *left: expression(Math.floor(0.95 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-95 {
+.tablet-pull-95 {
   left: -95%;
   /* <IE7> */
   *left: expression(Math.floor(-0.95 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-33 {
+.tablet-grid-33 {
   float: left;
   width: 33.33333%;
   /* <IE7> */
@@ -627,29 +627,29 @@
   /* </IE7> */
 }
 
-.prefix-33 {
+.tablet-prefix-33 {
   margin-left: 33.33333%;
 }
 
-.suffix-33 {
+.tablet-suffix-33 {
   margin-right: 33.33333%;
 }
 
-.push-33 {
+.tablet-push-33 {
   left: 33.33333%;
   /* <IE7> */
   *left: expression(Math.floor(0.33333 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-33 {
+.tablet-pull-33 {
   left: -33.33333%;
   /* <IE7> */
   *left: expression(Math.floor(-0.33333 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-66 {
+.tablet-grid-66 {
   float: left;
   width: 66.66667%;
   /* <IE7> */
@@ -657,29 +657,29 @@
   /* </IE7> */
 }
 
-.prefix-66 {
+.tablet-prefix-66 {
   margin-left: 66.66667%;
 }
 
-.suffix-66 {
+.tablet-suffix-66 {
   margin-right: 66.66667%;
 }
 
-.push-66 {
+.tablet-push-66 {
   left: 66.66667%;
   /* <IE7> */
   *left: expression(Math.floor(0.66667 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.pull-66 {
+.tablet-pull-66 {
   left: -66.66667%;
   /* <IE7> */
   *left: expression(Math.floor(-0.66667 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* </IE7> */
 }
 
-.grid-100 {
+.tablet-grid-100 {
   clear: both;
   width: 100%;
 }
