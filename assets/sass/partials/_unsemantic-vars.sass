@@ -71,35 +71,41 @@ $lang-reverse: right !default
   @extend %clearfix
   margin-left: auto
   margin-right: auto
-  padding-left: $gutter-half
-  padding-right: $gutter-half
   max-width: $container-max-width
+
+  // Set if gutter is non-zero
+  @if $gutter-half != 0
+    padding-left: $gutter-half
+    padding-right: $gutter-half
 
 // `Grid columns.
 //----------------------------------------------------------------------------------------------------
 
 %grid-columns-all
   +box-sizing(border-box)
-  padding-left: $gutter-half
-  padding-right: $gutter-half
 
-  @if $unsemantic-ie7-support
-    // [1] Remove padding, since IE7 doesn't
-    //     support "box-sizing: border-box".
+  // Set if gutter is non-zero
+  @if $gutter-half != 0
+    padding-left: $gutter-half
+    padding-right: $gutter-half
 
-    /* <IE7> */
-    *padding-left: 0
-    *padding-right: 0
-    /* </IE7> */
+    @if $unsemantic-ie7-support
+      // [1] Remove padding, since IE7 doesn't
+      //     support "box-sizing: border-box".
 
-    //
-    // [2] Fake what would normally be padding,
-    //     for browsers that support box-sizing.
-    & > *
       /* <IE7> */
-      *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
-      *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
+      *padding-left: 0
+      *padding-right: 0
       /* </IE7> */
+
+      //
+      // [2] Fake what would normally be padding,
+      //     for browsers that support box-sizing.
+      & > *
+        /* <IE7> */
+        *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
+        *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
+        /* </IE7> */
 
 // `Push & Pull, to rearrange column order (for potential "SEO").
 //----------------------------------------------------------------------------------------------------
@@ -114,7 +120,7 @@ $lang-reverse: right !default
 %grid-columns-push-pull
   position: relative
 
-// `Hide on desktop/mobile.
+// `Hide on desktop/tablet/mobile.
 //----------------------------------------------------------------------------------------------------
 
 %hide
