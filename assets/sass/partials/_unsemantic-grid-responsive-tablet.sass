@@ -2,19 +2,21 @@
 /* This file has a mobile-to-tablet, and tablet-to-desktop breakpoint */
 /* ================================================================== */
 
-$media-mobile: 767px !default
-$media-desktop: 1025px !default
+$media-mobile-max: 767px !default
+$media-tablet-min: 768px !default
+$media-tablet-max: 1024px !default
+$media-desktop-min: 1025px !default
 
 @import "unsemantic-ie-snap"
 
 @media screen
   @import "unsemantic-grid-base-tablet"
 
-@media screen and (max-width: $media-mobile)
+@media screen and (max-width: $media-mobile-max)
   @import "unsemantic-grid-mobile"
 
-@media screen and (min-width: $media-mobile) and (max-width: $media-desktop)
+@media screen and (min-width: $media-tablet-min) and (max-width: $media-tablet-max)
   @import "unsemantic-grid-tablet"
 
-@media screen and (min-width: $media-desktop)
+@media screen and (min-width: $media-desktop-min)
   @import "unsemantic-grid-desktop"

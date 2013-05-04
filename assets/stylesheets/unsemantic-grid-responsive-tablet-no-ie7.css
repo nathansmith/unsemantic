@@ -550,7 +550,7 @@
     width: 100%;
   }
 }
-@media screen and (min-width: 767px) and (max-width: 1025px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .tablet-grid-100:before,
   .tablet-grid-100:after {
     content: ".";
