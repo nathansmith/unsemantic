@@ -726,10 +726,6 @@
   width: 100%;
 }
 
-body {
-  min-width: 320px;
-}
-
 .clear {
   clear: both;
   display: block;
