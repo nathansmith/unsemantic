@@ -6,7 +6,7 @@
     width: 320px;
 }
 }
-@media screen {
+@media all {
   .clear {
     clear: both;
     display: block;
