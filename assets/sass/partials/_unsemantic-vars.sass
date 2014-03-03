@@ -1,8 +1,10 @@
 // These mixins are intended to be used from:
 //
-//   * _unsemantic-grid-base.sass
-//   * _unsemantic-grid-mobile.sass
-//   * _unsemantic-grid-desktop.sass
+//   * unsemantic-grid-base.sass
+//   * unsemantic-grid-mobile.sass
+//   * unsemantic-grid-desktop.sass
+//   * _unsemantic-grid-responsive.sass
+//   * etc.
 //
 // But could be used in your own styles, via class
 // names of your choice. You don't *have* to be
@@ -16,7 +18,7 @@
 
 @import "compass/css3"
 
-// `Variables
+// `Variables.
 //----------------------------------------------------------------------------------------------------
 
 $unsemantic-ie7-support: true !default
@@ -29,198 +31,449 @@ $lang-forward: left !default
 
 $lang-reverse: right !default
 
-// `Clear floated elements.
+// `Creates scoped placeholders.
 //----------------------------------------------------------------------------------------------------
 
-// http://sonspring.com/journal/clearing-floats
+=unsemantic-grid-placeholders($_SCOPE: null)
+  $scope: ""
 
-%clear
-  clear: both
-  display: block
-  overflow: hidden
-  visibility: hidden
-  width: 0
-  height: 0
+  // Scope: mobile, tablet, or desktop.
+  @if $_SCOPE != null
+    $scope: #{$_SCOPE + "-"}
 
-// http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified
+  // ========================
+  // `Clear floated elements.
+  // ========================
 
-%clearfix:before,
-%clearfix:after
-  content: "."
-  display: block
-  overflow: hidden
-  visibility: hidden
-  font-size: 0
-  line-height: 0
-  width: 0
-  height: 0
+  // http://sonspring.com/journal/clearing-floats
 
-%clearfix:after
-  clear: both
+  %#{$scope}clear
+    clear: both
+    display: block
+    overflow: hidden
+    visibility: hidden
+    width: 0
+    height: 0
 
-@if $unsemantic-ie7-support
-  %clearfix
-    /* <IE7> */
-    *zoom: 1
-    /* </IE7> */
+  // http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified
 
-// `Container
-//----------------------------------------------------------------------------------------------------
+  %#{$scope}clearfix:before,
+  %#{$scope}clearfix:after
+    content: "."
+    display: block
+    overflow: hidden
+    visibility: hidden
+    font-size: 0
+    line-height: 0
+    width: 0
+    height: 0
 
-%grid-container
-  @extend %clearfix
-  margin-left: auto
-  margin-right: auto
+  %#{$scope}clearfix:after
+    clear: both
 
-  @if $container-max-width != none
-    max-width: $container-max-width
-
-  // Set if gutter is non-zero
-  @if $gutter-half != 0
-    padding-left: $gutter-half
-    padding-right: $gutter-half
-
-// `Grid columns.
-//----------------------------------------------------------------------------------------------------
-
-%grid-columns-all
-  +box-sizing(border-box)
-
-  // Set if gutter is non-zero
-  @if $gutter-half != 0
-    padding-left: $gutter-half
-    padding-right: $gutter-half
-
-    @if $unsemantic-ie7-support
-      // [1] Remove padding, since IE7 doesn't
-      //     support "box-sizing: border-box".
-
+  @if $unsemantic-ie7-support
+    %#{$scope}clearfix
       /* <IE7> */
-      *padding-left: 0
-      *padding-right: 0
+      *zoom: 1
       /* </IE7> */
 
-      //
-      // [2] Fake what would normally be padding,
-      //     for browsers that support box-sizing.
-      & > *
+  // ===========
+  // `Container.
+  // ===========
+
+  %#{$scope}grid-container
+    @extend %#{$scope}clearfix
+    margin-left: auto
+    margin-right: auto
+
+    @if $container-max-width != none
+      max-width: $container-max-width
+
+    // Set if gutter is non-zero.
+    @if $gutter-half != 0
+      padding-left: $gutter-half
+      padding-right: $gutter-half
+
+  // ==============
+  // `Grid columns.
+  // ==============
+
+  %#{$scope}grid-columns-all
+    +box-sizing(border-box)
+
+    // Set if gutter is non-zero.
+    @if $gutter-half != 0
+      padding-left: $gutter-half
+      padding-right: $gutter-half
+
+      @if $unsemantic-ie7-support
+        // [1] Remove padding, since IE7 doesn't
+        //     support "box-sizing: border-box".
+
         /* <IE7> */
-        *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
-        *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
+        *padding-left: 0
+        *padding-right: 0
         /* </IE7> */
 
-// `Push & Pull, to rearrange column order (for potential "SEO").
+        //
+        // [2] Fake what would normally be padding,
+        //     for browsers that support box-sizing.
+        & > *
+          /* <IE7> */
+          *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
+          *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
+          /* </IE7> */
+
+  // ==============================================================
+  // `Push & Pull, to rearrange column order (for potential "SEO").
+  // ==============================================================
+
+  // Remove padding, if it's being used
+  // as a parent for other grid columns.
+  %#{$scope}grid-parent
+    padding-left: 0
+    padding-right: 0
+
+  // Allows columns to be offset +/- left.
+  %#{$scope}grid-columns-push-pull
+    position: relative
+
+  // ===============================
+  // `Hide on desktop/tablet/mobile.
+  // ===============================
+
+  %#{$scope}hide
+    display: none !important
+
+  // ==============
+  // `Grid columns.
+  // ==============
+
+  //
+  // For 5 through 95 percent.
+  //
+
+  @for $i from 1 through 19
+    $num: $i * 5
+    $decimal: $num / 100
+    $percent: $num * 1%
+
+    %#{$scope}grid-#{$num}
+      float: $lang-forward
+      width: $percent
+
+      @if $unsemantic-ie7-support
+        /* <IE7> */
+        *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+        /* </IE7> */
+
+    %#{$scope}prefix-#{$num}
+      margin-#{$lang-forward}: $percent
+
+    %#{$scope}suffix-#{$num}
+      margin-#{$lang-reverse}: $percent
+
+    %#{$scope}push-#{$num}
+      #{$lang-forward}: $percent
+
+      @if $unsemantic-ie7-support
+        /* <IE7> */
+        *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+        /* </IE7> */
+
+    %#{$scope}pull-#{$num}
+      #{$lang-forward}: $percent * -1
+
+      @if $unsemantic-ie7-support
+        /* <IE7> */
+        *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+        /* </IE7> */
+
+  //
+  // For one-third and two-thirds.
+  //
+
+  @for $i from 1 through 2
+    $num: $i * 33
+    $one-third: 1/3
+    $decimal: $i * $one-third
+    $percent: ($num + $decimal) * 1%
+
+    // Percentage based widths.
+    %#{$scope}grid-#{$num}
+      float: $lang-forward
+      width: $percent
+
+      @if $unsemantic-ie7-support
+        /* <IE7> */
+        *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+        /* </IE7> */
+
+    // Prefix, to add extra columns before.
+    %#{$scope}prefix-#{$num}
+      margin-#{$lang-forward}: $percent
+
+    // Suffix, to add extra columns after.
+    %#{$scope}suffix-#{$num}
+      margin-#{$lang-reverse}: $percent
+
+    // Push & Pull, to rearrange column order (for potential "SEO").
+    %#{$scope}push-#{$num}
+      #{$lang-forward}: $percent
+
+      @if $unsemantic-ie7-support
+        /* <IE7> */
+        *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+        /* </IE7> */
+
+    %#{$scope}pull-#{$num}
+      #{$lang-forward}: $percent * -1
+
+      @if $unsemantic-ie7-support
+        /* <IE7> */
+        *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+        /* </IE7> */
+
+  //
+  // Full width, just line-break.
+  //
+
+  %#{$scope}grid-100
+    @extend %#{$scope}clearfix
+    clear: both
+    width: 100%
+
+// `Consume placeholders at global scope. For: mobile, destkop.
 //----------------------------------------------------------------------------------------------------
 
-// Remove padding, if it's being used
-// as a parent for other grid columns.
-%grid-parent
-  padding-left: 0
-  padding-right: 0
+=unsemantic-grid-base
 
-// Allows columns to be offset +/- left.
-%grid-columns-push-pull
-  position: relative
+  // ===========
+  // `Container.
+  // ===========
 
-// `Hide on desktop/tablet/mobile.
+  .grid-container
+    @extend %grid-container
+
+  // ========================
+  // `Clear floated elements.
+  // ========================
+
+  .clear
+    @extend %clear
+
+  .clearfix
+    @extend %clearfix
+
+  // ==============
+  // `Grid columns.
+  // ==============
+
+  //
+  // For 5 through 100 percent.
+  //
+
+  @for $i from 1 through 20
+    $num: $i * 5
+
+    .grid-#{$num}
+      @extend %grid-columns-all
+
+    .mobile-grid-#{$num}
+      @extend %grid-columns-all
+
+  //
+  // For one-third and two-thirds.
+  //
+
+  @for $i from 1 through 2
+    $num: $i * 33
+
+    .grid-#{$num}
+      @extend %grid-columns-all
+
+    .mobile-grid-#{$num}
+      @extend %grid-columns-all
+
+  // Remove padding, if it's being used
+  // as a parent for other grid columns.
+
+  .grid-parent
+    @extend %grid-parent
+
+// `Consume placeholders at global scope. For: mobile, tablet, destkop.
 //----------------------------------------------------------------------------------------------------
 
-%hide
-  display: none !important
+=unsemantic-grid-base-tablet
 
-// `Grid columns.
+  // ===========
+  // `Container.
+  // ===========
+
+  .grid-container
+    @extend %grid-container
+
+  // ========================
+  // `Clear floated elements.
+  // ========================
+
+  .clear
+    @extend %clear
+
+  .clearfix
+    @extend %clearfix
+
+  // ==============
+  // `Grid columns.
+  // ==============
+
+  //
+  // For 5 through 100 percent.
+  //
+
+  @for $i from 1 through 20
+    $num: $i * 5
+
+    .grid-#{$num}
+      @extend %grid-columns-all
+
+    .mobile-grid-#{$num}
+      @extend %grid-columns-all
+
+    .tablet-grid-#{$num}
+      @extend %grid-columns-all
+
+  //
+  // For one-third and two-thirds.
+  //
+
+  @for $i from 1 through 2
+    $num: $i * 33
+
+    .grid-#{$num}
+      @extend %grid-columns-all
+
+    .mobile-grid-#{$num}
+      @extend %grid-columns-all
+
+    .tablet-grid-#{$num}
+      @extend %grid-columns-all
+
+  // Remove padding, if it's being used
+  // as a parent for other grid columns.
+
+  .grid-parent
+    @extend %grid-parent
+
+// `Consume placeholders at breakpoint scope.
 //----------------------------------------------------------------------------------------------------
 
-//
-// For 5 through 95 percent.
-//
+=unsemantic-grid-scoped($_SCOPE: null)
+  $scope: ""
+  $class: ""
 
-@for $i from 1 through 19
-  $num: $i * 5
-  $decimal: $num / 100
-  $percent: $num * 1%
+  // Scope: mobile, tablet, or desktop.
+  @if $_SCOPE != null
+    $scope: #{$_SCOPE + "-"}
 
-  %grid-#{$num}
-    float: $lang-forward
-    width: $percent
+  // Class prefix.
+  @if $_SCOPE != null and $_SCOPE != desktop
+    $class: #{$_SCOPE + "-"}
 
-    @if $unsemantic-ie7-support
-      /* <IE7> */
-      *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-      /* </IE7> */
+  // ================
+  // `Hide on mobile.
+  // ================
 
-  %prefix-#{$num}
-    margin-#{$lang-forward}: $percent
+  .hide-on-#{$_SCOPE}
+    @extend %#{$scope}hide
 
-  %suffix-#{$num}
-    margin-#{$lang-reverse}: $percent
+  // ==============
+  // `Grid columns.
+  // ==============
 
-  %push-#{$num}
-    #{$lang-forward}: $percent
+  //
+  // Full width, just line-break.
+  //
 
-    @if $unsemantic-ie7-support
-      /* <IE7> */
-      *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-      /* </IE7> */
+  .#{$class}grid-100
+    @extend %#{$scope}grid-100
 
-  %pull-#{$num}
-    #{$lang-forward}: $percent * -1
+  //
+  // For 5 through 95 percent.
+  //
 
-    @if $unsemantic-ie7-support
-      /* <IE7> */
-      *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-      /* </IE7> */
+  @for $i from 1 through 19
+    $num: $i * 5
 
-//
-// For one-third and two-thirds.
-//
+    // Percentage based widths.
+    .#{$class}grid-#{$num}
+      @extend %#{$scope}grid-#{$num}
 
-@for $i from 1 through 2
-  $num: $i * 33
-  $one-third: 1/3
-  $decimal: $i * $one-third
-  $percent: ($num + $decimal) * 1%
+    // Prefix, to add extra columns before.
+    .#{$class}prefix-#{$num}
+      @extend %#{$scope}prefix-#{$num}
 
-  // Percentage based widths.
-  %grid-#{$num}
-    float: $lang-forward
-    width: $percent
+    // Suffix, to add extra columns after.
+    .#{$class}suffix-#{$num}
+      @extend %#{$scope}suffix-#{$num}
 
-    @if $unsemantic-ie7-support
-      /* <IE7> */
-      *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-      /* </IE7> */
+    // Push, to rearrange column order (for potential "SEO").
+    .#{$class}push-#{$num}
+      @extend %#{$scope}push-#{$num}
 
-  // Prefix, to add extra columns before.
-  %prefix-#{$num}
-    margin-#{$lang-forward}: $percent
+    // Pull, to rearrange column order (for potential "SEO").
+    .#{$class}pull-#{$num}
+      @extend %#{$scope}pull-#{$num}
 
-  // Suffix, to add extra columns after.
-  %suffix-#{$num}
-    margin-#{$lang-reverse}: $percent
+  //
+  // For one-third and two-thirds.
+  //
 
-  // Push & Pull, to rearrange column order (for potential "SEO").
-  %push-#{$num}
-    #{$lang-forward}: $percent
+  @for $i from 1 through 2
+    $num: $i * 33
 
-    @if $unsemantic-ie7-support
-      /* <IE7> */
-      *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-      /* </IE7> */
+    // Percentage based widths.
+    .#{$class}grid-#{$num}
+      @extend %#{$scope}grid-#{$num}
 
-  %pull-#{$num}
-    #{$lang-forward}: $percent * -1
+    // Prefix, to add extra columns before.
+    .#{$class}prefix-#{$num}
+      @extend %#{$scope}prefix-#{$num}
 
-    @if $unsemantic-ie7-support
-      /* <IE7> */
-      *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-      /* </IE7> */
+    // Suffix, to add extra columns after.
+    .#{$class}suffix-#{$num}
+      @extend %#{$scope}suffix-#{$num}
 
-//
-// Full width, just line-break.
-//
+    // Push, to rearrange column order (for potential "SEO").
+    .#{$class}push-#{$num}
+      @extend %#{$scope}push-#{$num}
 
-%grid-100
-  @extend %clearfix
-  clear: both
-  width: 100%
+    // Pull, to rearrange column order (for potential "SEO").
+    .#{$class}pull-#{$num}
+      @extend %#{$scope}pull-#{$num}
+
+  // ==============================================================
+  // `Push & Pull, to rearrange column order (for potential "SEO").
+  // ==============================================================
+
+  //
+  // For 5 through 95 percent.
+  //
+
+  @for $i from 1 through 19
+    $num: $i * 5
+
+    .#{$class}push-#{$num},
+    .#{$class}pull-#{$num}
+      @extend %#{$scope}grid-columns-push-pull
+
+  //
+  // For one-third and two-thirds.
+  //
+
+  @for $i from 1 through 2
+    $num: $i * 33
+
+    .#{$class}push-#{$num},
+    .#{$class}pull-#{$num}
+      @extend %#{$scope}grid-columns-push-pull

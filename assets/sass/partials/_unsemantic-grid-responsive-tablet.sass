@@ -7,16 +7,20 @@ $media-tablet-min: 768px !default
 $media-tablet-max: 1024px !default
 $media-desktop-min: 1025px !default
 
+@import "unsemantic-vars"
 @import "unsemantic-ie-snap"
 
-@media all
-  @import "unsemantic-grid-base-tablet"
++unsemantic-grid-placeholders
++unsemantic-grid-base-tablet
 
 @media screen and (max-width: $media-mobile-max)
-  @import "unsemantic-grid-mobile"
+  +unsemantic-grid-placeholders(mobile)
+  +unsemantic-grid-scoped(mobile)
 
 @media screen and (min-width: $media-tablet-min) and (max-width: $media-tablet-max)
-  @import "unsemantic-grid-tablet"
+  +unsemantic-grid-placeholders(tablet)
+  +unsemantic-grid-scoped(tablet)
 
 @media screen and (min-width: $media-desktop-min)
-  @import "unsemantic-grid-desktop"
+  +unsemantic-grid-placeholders(desktop)
+  +unsemantic-grid-scoped(desktop)

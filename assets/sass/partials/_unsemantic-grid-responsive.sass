@@ -5,13 +5,16 @@
 $media-mobile-max: 767px !default
 $media-desktop-min: 768px !default
 
+@import "unsemantic-vars"
 @import "unsemantic-ie-snap"
 
-@media all
-  @import "unsemantic-grid-base"
++unsemantic-grid-placeholders
++unsemantic-grid-base
 
 @media screen and (max-width: $media-mobile-max)
-  @import "unsemantic-grid-mobile"
+  +unsemantic-grid-placeholders(mobile)
+  +unsemantic-grid-scoped(mobile)
 
 @media screen and (min-width: $media-desktop-min)
-  @import "unsemantic-grid-desktop"
+  +unsemantic-grid-placeholders(desktop)
+  +unsemantic-grid-scoped(desktop)

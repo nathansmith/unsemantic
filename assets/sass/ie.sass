@@ -1,6 +1,9 @@
-@media all
-  @import "partials/unsemantic-grid-base"
+@import "partials/unsemantic-vars"
 
-@media screen
-  @import "partials/unsemantic-grid-desktop"
-  @import "partials/ie"
++unsemantic-grid-placeholders
++unsemantic-grid-base
+
++unsemantic-grid-placeholders(desktop)
++unsemantic-grid-scoped(desktop)
+
+@import "partials/ie"
