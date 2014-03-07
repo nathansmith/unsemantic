@@ -35,6 +35,7 @@ $lang-reverse: right !default
 //----------------------------------------------------------------------------------------------------
 
 =unsemantic-grid-placeholders($_SCOPE: null)
+  $_SCOPE: unquote($_SCOPE)
   $scope: ""
 
   // Scope: mobile, tablet, or desktop.
@@ -369,6 +370,7 @@ $lang-reverse: right !default
 //----------------------------------------------------------------------------------------------------
 
 =unsemantic-grid-scoped($_SCOPE: null)
+  $_SCOPE: unquote($_SCOPE)
   $scope: ""
   $class: ""
 
