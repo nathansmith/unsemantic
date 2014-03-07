@@ -31,6 +31,76 @@ $lang-forward: left !default
 
 $lang-reverse: right !default
 
+// `IE7 Crap.
+//----------------------------------------------------------------------------------------------------
+
+//
+// Keeping the vomit-worthy code in one spot.
+// This is seriously bad, but IE7 is bad too.
+//
+// To prevent this from being generated in your CSS, set
+// $unsemantic-ie7-support to `false` at a higher scope.
+//
+
+//
+// Push
+//
+=ie7-push($decimal)
+  $decimal: unquote($decimal)
+
+  @if $unsemantic-ie7-support
+    /* <IE7> */
+    *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+    /* </IE7> */
+
+//
+// Pull
+//
+=ie7-pull($decimal)
+  $decimal: unquote($decimal)
+
+  @if $unsemantic-ie7-support
+    /* <IE7> */
+    *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+    /* </IE7> */
+
+//
+// Width
+//
+=ie7-width($decimal)
+  $decimal: unquote($decimal)
+
+  @if $unsemantic-ie7-support
+    /* <IE7> */
+    *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+    /* </IE7> */
+
+//
+// Faux gutter
+//
+=ie7-margin($margin)
+  $margin: unquote($margin)
+
+  $val: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$margin}")
+
+  @if $unsemantic-ie7-support
+    // [1] Remove padding, since IE7 doesn't
+    //     support "box-sizing: border-box".
+
+    /* <IE7> */
+    *padding-left: 0
+    *padding-right: 0
+    /* </IE7> */
+
+    //
+    // [2] Fake what would normally be padding,
+    //     for browsers that support box-sizing.
+    & > *
+      /* <IE7> */
+      *margin-left: $val
+      *margin-right: $val
+      /* </IE7> */
+
 // `Creates scoped placeholders.
 //----------------------------------------------------------------------------------------------------
 
@@ -106,24 +176,7 @@ $lang-reverse: right !default
     @if $gutter-half != 0
       padding-left: $gutter-half
       padding-right: $gutter-half
-
-      @if $unsemantic-ie7-support
-        // [1] Remove padding, since IE7 doesn't
-        //     support "box-sizing: border-box".
-
-        /* <IE7> */
-        *padding-left: 0
-        *padding-right: 0
-        /* </IE7> */
-
-        //
-        // [2] Fake what would normally be padding,
-        //     for browsers that support box-sizing.
-        & > *
-          /* <IE7> */
-          *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
-          *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
-          /* </IE7> */
+      +ie7-margin($gutter-half)
 
   // ==============================================================
   // `Push & Pull, to rearrange column order (for potential "SEO").
@@ -162,11 +215,7 @@ $lang-reverse: right !default
     %#{$scope}grid-#{$num}
       float: $lang-forward
       width: $percent
-
-      @if $unsemantic-ie7-support
-        /* <IE7> */
-        *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-        /* </IE7> */
+      +ie7-width($decimal)
 
     %#{$scope}prefix-#{$num}
       margin-#{$lang-forward}: $percent
@@ -176,19 +225,11 @@ $lang-reverse: right !default
 
     %#{$scope}push-#{$num}
       #{$lang-forward}: $percent
-
-      @if $unsemantic-ie7-support
-        /* <IE7> */
-        *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-        /* </IE7> */
+      +ie7-push($decimal)
 
     %#{$scope}pull-#{$num}
       #{$lang-forward}: $percent * -1
-
-      @if $unsemantic-ie7-support
-        /* <IE7> */
-        *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-        /* </IE7> */
+      +ie7-pull($decimal)
 
   //
   // For one-third and two-thirds.
@@ -204,11 +245,7 @@ $lang-reverse: right !default
     %#{$scope}grid-#{$num}
       float: $lang-forward
       width: $percent
-
-      @if $unsemantic-ie7-support
-        /* <IE7> */
-        *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-        /* </IE7> */
+      +ie7-width($decimal)
 
     // Prefix, to add extra columns before.
     %#{$scope}prefix-#{$num}
@@ -221,19 +258,11 @@ $lang-reverse: right !default
     // Push & Pull, to rearrange column order (for potential "SEO").
     %#{$scope}push-#{$num}
       #{$lang-forward}: $percent
-
-      @if $unsemantic-ie7-support
-        /* <IE7> */
-        *#{$lang-forward}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-        /* </IE7> */
+      +ie7-push($decimal)
 
     %#{$scope}pull-#{$num}
       #{$lang-forward}: $percent * -1
-
-      @if $unsemantic-ie7-support
-        /* <IE7> */
-        *#{$lang-forward}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-        /* </IE7> */
+      +ie7-pull($decimal)
 
   //
   // Full width, just line-break.
