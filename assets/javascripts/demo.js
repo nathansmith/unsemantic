@@ -4,8 +4,7 @@
   clearTimeout,
   console,
   jQuery,
-  setTimeout,
-  Zepto
+  setTimeout
 */
 
 var APP = (function($, window, document, undefined) {
@@ -72,5 +71,5 @@ var APP = (function($, window, document, undefined) {
     }
   };
 
-// Parameters: Zepto/jQuery, window, document.
-})(typeof Zepto === 'function' ? Zepto : jQuery, this, this.document);
+// Parameters: jQuery, window, document.
+})(jQuery, this, this.document);
