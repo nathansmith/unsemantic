@@ -1,0 +1,9 @@
+//
+// Keep the layout from going too narrow.
+//
+
+$media-query-breakpoint: 767px !default;
+
+body {
+  min-width: $media-query-breakpoint;
+}

@@ -1,0 +1,14 @@
+//
+// Fix for IE in Windows 8 "snap" mode.
+//
+// http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design
+//
+// Without affecting Windows Phone IE.
+//
+// http://timkadlec.com/2013/01/windows-phone-8-and-device-width
+//
+@media screen and (max-width: 400px) {
+  @-ms-viewport {
+    width: 320px;
+  }
+}

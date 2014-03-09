@@ -1,0 +1,11 @@
+//
+// For right-to-left languages.
+// (Hebrew, Arabic, etc.)
+//
+$lang-forward: right;
+$lang-reverse: left;
+
+@import "partials/unsemantic-vars";
+
+@include unsemantic-grid-placeholders(tablet);
+@include unsemantic-grid-scoped(tablet);

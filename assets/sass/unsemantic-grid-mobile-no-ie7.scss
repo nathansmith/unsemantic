@@ -1,0 +1,6 @@
+$unsemantic-ie7-support: false;
+
+@import "partials/unsemantic-vars";
+
+@include unsemantic-grid-placeholders(mobile);
+@include unsemantic-grid-scoped(mobile);

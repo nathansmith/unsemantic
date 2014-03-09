@@ -1,0 +1,22 @@
+/* ============================================ */
+/* This file has a mobile-to-desktop breakpoint */
+/* ============================================ */
+
+$media-mobile-max: 767px !default;
+$media-desktop-min: 768px !default;
+
+@import "unsemantic-vars";
+@import "unsemantic-ie-snap";
+
+@include unsemantic-grid-placeholders;
+@include unsemantic-grid-base;
+
+@media screen and (max-width: $media-mobile-max) {
+  @include unsemantic-grid-placeholders(mobile);
+  @include unsemantic-grid-scoped(mobile);
+}
+
+@media screen and (min-width: $media-desktop-min) {
+  @include unsemantic-grid-placeholders(desktop);
+  @include unsemantic-grid-scoped(desktop);
+}

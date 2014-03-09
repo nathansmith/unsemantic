@@ -1,3 +1,6 @@
+// `XHTML, HTML4, HTML5 Reset
+// ----------------------------------------------------------------------------------------------------
+
 a,
 abbr,
 acronym,
@@ -111,11 +114,19 @@ main,
 menu,
 nav,
 section {
+  // Override the default (display: inline) for
+  // browsers that do not recognize HTML5 tags.
+  //
+  // IE8 (and lower) requires a shiv:
+  // http://ejohn.org/blog/html5-shiv
   display: block;
 }
 
 b,
 strong {
+  // Makes browsers agree.
+  // IE + Opera = font-weight: bold.
+  // Gecko + WebKit = font-weight: bolder.
   font-weight: bold;
 }
 
@@ -123,6 +134,8 @@ img {
   color: transparent;
   font-size: 0;
   vertical-align: middle;
+  // For IE.
+  // http://css-tricks.com/ie-fix-bicubic-scaling-for-images
   -ms-interpolation-mode: bicubic;
 }
 
@@ -132,6 +145,10 @@ ol {
 }
 
 li {
+  // For IE6 + IE7:
+  //
+  // "display: list-item" keeps bullets from
+  // disappearing if hasLayout is triggered.
   display: list-item;
 }
 
@@ -180,124 +197,7 @@ sup {
 }
 
 svg {
+  // For IE9. Without, occasionally draws shapes
+  // outside the boundaries of <svg> rectangle.
   overflow: hidden;
-}
-
-body {
-  font: 13px / 1.5 "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
-}
-
-pre,
-code {
-  font-family: "DejaVu Sans Mono", Monaco, Consolas, monospace;
-}
-
-hr {
-  border: 0 #ccc solid;
-  border-top-width: 1px;
-  clear: both;
-  height: 0;
-}
-
-h1 {
-  font-size: 25px;
-}
-
-h2 {
-  font-size: 23px;
-}
-
-h3 {
-  font-size: 21px;
-}
-
-h4 {
-  font-size: 19px;
-}
-
-h5 {
-  font-size: 17px;
-}
-
-h6 {
-  font-size: 15px;
-}
-
-ol {
-  list-style: decimal;
-}
-
-ul {
-  list-style: disc;
-}
-
-li {
-  margin-left: 30px;
-}
-
-p,
-dl,
-hr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ol,
-ul,
-pre,
-table,
-address,
-fieldset,
-figure {
-  margin-bottom: 20px;
-}
-
-body {
-  background: white;
-  color: #333;
-  text-align: center;
-}
-
-a {
-  color: blue;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-h1 {
-  padding-top: 20px;
-}
-
-.example-block {
-  background: #eee;
-  font-size: 10px;
-  overflow: hidden;
-  margin-bottom: 20px;
-  padding: 10px 0;
-  text-align: center;
-}
-
-.grid-container {
-  padding-bottom: 20px;
-}
-
-.grid-container > hr {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-div[class*="push-"] section {
-  background: #dec;
-}
-
-div[class*="pull-"] section {
-  background: #fcd;
-}
-
-.dynamic-px-width {
-  display: block;
 }
