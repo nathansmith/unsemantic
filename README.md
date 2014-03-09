@@ -1,6 +1,6 @@
 # Unsemantic CSS Framework
 
-This is a fluid grid system for desktop & mobile.
+This is a fluid grid system for mobile, tablet, and desktop.
 
 ---
 
