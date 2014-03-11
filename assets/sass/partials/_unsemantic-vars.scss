@@ -21,6 +21,10 @@
 
 $unsemantic-ie7-support: true !default;
 
+$unsemantic-prefix-suffix-support: true !default;
+
+$unsemantic-push-pull-support: true !default;
+
 $container-max-width: 1200px !default;
 
 $gutter-half: 10px !default;
@@ -230,22 +234,32 @@ $lang-reverse: right !default;
       @include ie7-width($decimal);
     }
 
-    %#{$scope}prefix-#{$num} {
-      margin-#{$lang-forward}: $percent;
+    // Allow empty columns?
+    @if $unsemantic-prefix-suffix-support {
+      // Prefix, to add extra columns before.
+      %#{$scope}prefix-#{$num} {
+        margin-#{$lang-forward}: $percent;
+      }
+
+      // Suffix, to add extra columns after.
+      %#{$scope}suffix-#{$num} {
+        margin-#{$lang-reverse}: $percent;
+      }
     }
 
-    %#{$scope}suffix-#{$num} {
-      margin-#{$lang-reverse}: $percent;
-    }
+    // Allow column swapping?
+    @if $unsemantic-push-pull-support {
+      // Push columns forward.
+      %#{$scope}push-#{$num} {
+        #{$lang-forward}: $percent;
+        @include ie7-push($decimal);
+      }
 
-    %#{$scope}push-#{$num} {
-      #{$lang-forward}: $percent;
-      @include ie7-push($decimal);
-    }
-
-    %#{$scope}pull-#{$num} {
-      #{$lang-forward}: $percent * -1;
-      @include ie7-pull($decimal);
+      // Pull columns backward.
+      %#{$scope}pull-#{$num} {
+        #{$lang-forward}: $percent * -1;
+        @include ie7-pull($decimal);
+      }
     }
   }
 
@@ -263,25 +277,32 @@ $lang-reverse: right !default;
       @include ie7-width($decimal);
     }
 
-    // Prefix, to add extra columns before.
-    %#{$scope}prefix-#{$num} {
-      margin-#{$lang-forward}: $percent;
+    // Allow empty columns?
+    @if $unsemantic-prefix-suffix-support {
+      // Prefix, to add extra columns before.
+      %#{$scope}prefix-#{$num} {
+        margin-#{$lang-forward}: $percent;
+      }
+
+      // Suffix, to add extra columns after.
+      %#{$scope}suffix-#{$num} {
+        margin-#{$lang-reverse}: $percent;
+      }
     }
 
-    // Suffix, to add extra columns after.
-    %#{$scope}suffix-#{$num} {
-      margin-#{$lang-reverse}: $percent;
-    }
+    // Allow column swapping?
+    @if $unsemantic-push-pull-support {
+      // Push columns forward.
+      %#{$scope}push-#{$num} {
+        #{$lang-forward}: $percent;
+        @include ie7-push($decimal);
+      }
 
-    // Push & Pull, to rearrange column order (for potential "SEO").
-    %#{$scope}push-#{$num} {
-      #{$lang-forward}: $percent;
-      @include ie7-push($decimal);
-    }
-
-    %#{$scope}pull-#{$num} {
-      #{$lang-forward}: $percent * -1;
-      @include ie7-pull($decimal);
+      // Pull columns backward.
+      %#{$scope}pull-#{$num} {
+        #{$lang-forward}: $percent * -1;
+        @include ie7-pull($decimal);
+      }
     }
   }
 
@@ -324,9 +345,11 @@ $lang-reverse: right !default;
   // For 5 through 100 percent.
   @for $i from 1 through 20 {
     $num: $i * 5;
+
     .grid-#{$num} {
       @extend %grid-columns-all;
     }
+
     .mobile-grid-#{$num} {
       @extend %grid-columns-all;
     }
@@ -335,9 +358,11 @@ $lang-reverse: right !default;
   // For one-third and two-thirds.
   @for $i from 1 through 2 {
     $num: $i * 33;
+
     .grid-#{$num} {
       @extend %grid-columns-all;
     }
+
     .mobile-grid-#{$num} {
       @extend %grid-columns-all;
     }
@@ -381,12 +406,15 @@ $lang-reverse: right !default;
   // For 5 through 100 percent.
   @for $i from 1 through 20 {
     $num: $i * 5;
+
     .grid-#{$num} {
       @extend %grid-columns-all;
     }
+
     .mobile-grid-#{$num} {
       @extend %grid-columns-all;
     }
+
     .tablet-grid-#{$num} {
       @extend %grid-columns-all;
     }
@@ -395,12 +423,15 @@ $lang-reverse: right !default;
   // For one-third and two-thirds.
   @for $i from 1 through 2 {
     $num: $i * 33;
+
     .grid-#{$num} {
       @extend %grid-columns-all;
     }
+
     .mobile-grid-#{$num} {
       @extend %grid-columns-all;
     }
+
     .tablet-grid-#{$num} {
       @extend %grid-columns-all;
     }
@@ -457,24 +488,17 @@ $lang-reverse: right !default;
       @extend %#{$scope}grid-#{$num};
     }
 
-    // Prefix, to add extra columns before.
-    .#{$class}prefix-#{$num} {
-      @extend %#{$scope}prefix-#{$num};
-    }
+    // Allow empty columns?
+    @if $unsemantic-prefix-suffix-support {
+      // Prefix, to add extra columns before.
+      .#{$class}prefix-#{$num} {
+        @extend %#{$scope}prefix-#{$num};
+      }
 
-    // Suffix, to add extra columns after.
-    .#{$class}suffix-#{$num} {
-      @extend %#{$scope}suffix-#{$num};
-    }
-
-    // Push, to rearrange column order (for potential "SEO").
-    .#{$class}push-#{$num} {
-      @extend %#{$scope}push-#{$num};
-    }
-
-    // Pull, to rearrange column order (for potential "SEO").
-    .#{$class}pull-#{$num} {
-      @extend %#{$scope}pull-#{$num};
+      // Suffix, to add extra columns after.
+      .#{$class}suffix-#{$num} {
+        @extend %#{$scope}suffix-#{$num};
+      }
     }
   }
 
@@ -487,24 +511,17 @@ $lang-reverse: right !default;
       @extend %#{$scope}grid-#{$num};
     }
 
-    // Prefix, to add extra columns before.
-    .#{$class}prefix-#{$num} {
-      @extend %#{$scope}prefix-#{$num};
-    }
+    // Allow empty columns?
+    @if $unsemantic-prefix-suffix-support {
+      // Prefix, to add extra columns before.
+      .#{$class}prefix-#{$num} {
+        @extend %#{$scope}prefix-#{$num};
+      }
 
-    // Suffix, to add extra columns after.
-    .#{$class}suffix-#{$num} {
-      @extend %#{$scope}suffix-#{$num};
-    }
-
-    // Push, to rearrange column order (for potential "SEO").
-    .#{$class}push-#{$num} {
-      @extend %#{$scope}push-#{$num};
-    }
-
-    // Pull, to rearrange column order (for potential "SEO").
-    .#{$class}pull-#{$num} {
-      @extend %#{$scope}pull-#{$num};
+      // Suffix, to add extra columns after.
+      .#{$class}suffix-#{$num} {
+        @extend %#{$scope}suffix-#{$num};
+      }
     }
   }
 
@@ -512,23 +529,39 @@ $lang-reverse: right !default;
   // `Push & Pull, to rearrange column order (for potential "SEO").
   // ==============================================================
 
-  // For 5 through 95 percent.
-  @for $i from 1 through 19 {
-    $num: $i * 5;
+  @if $unsemantic-push-pull-support {
+    // For 5 through 95 percent.
+    @for $i from 1 through 19 {
+      $num: $i * 5;
 
-    .#{$class}push-#{$num},
-    .#{$class}pull-#{$num} {
-      @extend %#{$scope}grid-columns-push-pull;
+      // Push columns forward.
+      .#{$class}push-#{$num} {
+        @extend %#{$scope}push-#{$num};
+        @extend %#{$scope}grid-columns-push-pull;
+      }
+
+      // Pull columns backward.
+      .#{$class}pull-#{$num} {
+        @extend %#{$scope}pull-#{$num};
+        @extend %#{$scope}grid-columns-push-pull;
+      }
     }
-  }
 
-  // For one-third and two-thirds.
-  @for $i from 1 through 2 {
-    $num: $i * 33;
+    // For one-third and two-thirds.
+    @for $i from 1 through 2 {
+      $num: $i * 33;
 
-    .#{$class}push-#{$num},
-    .#{$class}pull-#{$num} {
-      @extend %#{$scope}grid-columns-push-pull;
+      // Push columns forward.
+      .#{$class}push-#{$num} {
+        @extend %#{$scope}push-#{$num};
+        @extend %#{$scope}grid-columns-push-pull;
+      }
+
+      // Pull columns backward.
+      .#{$class}pull-#{$num} {
+        @extend %#{$scope}pull-#{$num};
+        @extend %#{$scope}grid-columns-push-pull;
+      }
     }
   }
 }
