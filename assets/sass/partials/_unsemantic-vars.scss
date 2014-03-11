@@ -165,6 +165,7 @@ $lang-reverse: right !default;
   // ===========
   // `Container.
   // ===========
+
   %#{$scope}grid-container {
     @extend %#{$scope}clearfix;
     margin-left: auto;
@@ -205,9 +206,12 @@ $lang-reverse: right !default;
     padding-right: 0;
   }
 
-  // Allows columns to be offset +/- left.
-  %#{$scope}grid-columns-push-pull {
-    position: relative;
+  // Allow column swapping?
+  @if $unsemantic-push-pull-support {
+    // Allows columns to be offset +/- left.
+    %#{$scope}grid-columns-push-pull {
+      position: relative;
+    }
   }
 
   // ===============================
@@ -529,6 +533,7 @@ $lang-reverse: right !default;
   // `Push & Pull, to rearrange column order (for potential "SEO").
   // ==============================================================
 
+  // Allow column swapping?
   @if $unsemantic-push-pull-support {
     // For 5 through 95 percent.
     @for $i from 1 through 19 {
