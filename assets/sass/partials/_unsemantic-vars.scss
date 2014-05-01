@@ -191,6 +191,8 @@ $lang-reverse: right !default;
   // ==============
 
   %#{$scope}grid-columns-all {
+    @extend %#{$scope}clearfix;
+
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -316,7 +318,6 @@ $lang-reverse: right !default;
 
   // Full width, just line-break.
   %#{$scope}grid-100 {
-    @extend %#{$scope}clearfix;
     clear: both;
     width: 100%;
   }

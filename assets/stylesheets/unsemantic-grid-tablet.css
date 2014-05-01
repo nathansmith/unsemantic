@@ -1,25 +1,3 @@
-.tablet-grid-100:before,
-.tablet-grid-100:after {
-  content: ".";
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  font-size: 0;
-  line-height: 0;
-  width: 0;
-  height: 0;
-}
-
-.tablet-grid-100:after {
-  clear: both;
-}
-
-.tablet-grid-100 {
-  /* <IE7> */
-  *zoom: 1;
-  /* </IE7> */
-}
-
 .tablet-push-5, .tablet-pull-5, .tablet-push-10, .tablet-pull-10, .tablet-push-15, .tablet-pull-15, .tablet-push-20, .tablet-pull-20, .tablet-push-25, .tablet-pull-25, .tablet-push-30, .tablet-pull-30, .tablet-push-35, .tablet-pull-35, .tablet-push-40, .tablet-pull-40, .tablet-push-45, .tablet-pull-45, .tablet-push-50, .tablet-pull-50, .tablet-push-55, .tablet-pull-55, .tablet-push-60, .tablet-pull-60, .tablet-push-65, .tablet-pull-65, .tablet-push-70, .tablet-pull-70, .tablet-push-75, .tablet-pull-75, .tablet-push-80, .tablet-pull-80, .tablet-push-85, .tablet-pull-85, .tablet-push-90, .tablet-pull-90, .tablet-push-95, .tablet-pull-95, .tablet-push-33, .tablet-pull-33, .tablet-push-66, .tablet-pull-66 {
   position: relative;
 }
