@@ -8,9 +8,8 @@ To that end, you can use a "silent" Sass approach, and write your own Sass code 
 
 Unsemantic supports all major browsers: Chrome, Firefox, Internet Explorer (7+), Opera, and Safari.
 
----
 
-#### Read more here: [http://unsemantic.com](http://unsemantic.com)
+Read more here: [http://unsemantic.com](http://unsemantic.com)
 
 ---
 
@@ -43,7 +42,7 @@ For instance, if you want a column that occupies 50% of the page width, simply u
 </div>
 ```
 
----
+
 
 Demos
 ----------
@@ -60,14 +59,14 @@ And these demos make use of `Adapt.js`:
 * [Adapt.js Demo](http://unsemantic.com/demo-adapt)
 * [Adapt.js Demo](http://unsemantic.com/demo-adapt-rtl) – RTL text
 
----
+
 
 More CSS Documentation
 -------------------------------
 Read more here:
 [http://unsemantic.com/css-documentation](http://unsemantic.com/css-documentation)
 
----
+
 
 Contributing
 -----------------
@@ -83,7 +82,7 @@ Found a Bug?
 
 If you think you've found a bug, and can verify that it is reproducable, file a ticket on [GitHub](https://github.com/nathansmith/unsemantic/issues/new).
 
----
+
 
 License and Authors
 ----------------------------
