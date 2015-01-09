@@ -11,12 +11,12 @@ $media-desktop-min: 768px !default;
 @include unsemantic-grid-placeholders;
 @include unsemantic-grid-base;
 
-@media screen and (max-width: $media-mobile-max) {
+@media (max-width: $media-mobile-max) {
   @include unsemantic-grid-placeholders(mobile);
   @include unsemantic-grid-scoped(mobile);
 }
 
-@media screen and (min-width: $media-desktop-min) {
+@media (min-width: $media-desktop-min) {
   @include unsemantic-grid-placeholders(desktop);
   @include unsemantic-grid-scoped(desktop);
 }

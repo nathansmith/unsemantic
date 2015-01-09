@@ -1,7 +1,7 @@
 /* ================================================================== */
 /* This file has a mobile-to-tablet, and tablet-to-desktop breakpoint */
 /* ================================================================== */
-@media screen and (max-width: 400px) {
+@media (max-width: 400px) {
   @-ms-viewport {
     width: 320px;
   }
@@ -119,7 +119,7 @@
   padding-right: 0;
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   .mobile-push-5, .mobile-pull-5, .mobile-push-10, .mobile-pull-10, .mobile-push-15, .mobile-pull-15, .mobile-push-20, .mobile-pull-20, .mobile-push-25, .mobile-pull-25, .mobile-push-30, .mobile-pull-30, .mobile-push-35, .mobile-pull-35, .mobile-push-40, .mobile-pull-40, .mobile-push-45, .mobile-pull-45, .mobile-push-50, .mobile-pull-50, .mobile-push-55, .mobile-pull-55, .mobile-push-60, .mobile-pull-60, .mobile-push-65, .mobile-pull-65, .mobile-push-70, .mobile-pull-70, .mobile-push-75, .mobile-pull-75, .mobile-push-80, .mobile-pull-80, .mobile-push-85, .mobile-pull-85, .mobile-push-90, .mobile-pull-90, .mobile-push-95, .mobile-pull-95, .mobile-push-33, .mobile-pull-33, .mobile-push-66, .mobile-pull-66 {
     position: relative;
   }
@@ -574,7 +574,7 @@
     width: 100%;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .tablet-push-5, .tablet-pull-5, .tablet-push-10, .tablet-pull-10, .tablet-push-15, .tablet-pull-15, .tablet-push-20, .tablet-pull-20, .tablet-push-25, .tablet-pull-25, .tablet-push-30, .tablet-pull-30, .tablet-push-35, .tablet-pull-35, .tablet-push-40, .tablet-pull-40, .tablet-push-45, .tablet-pull-45, .tablet-push-50, .tablet-pull-50, .tablet-push-55, .tablet-pull-55, .tablet-push-60, .tablet-pull-60, .tablet-push-65, .tablet-pull-65, .tablet-push-70, .tablet-pull-70, .tablet-push-75, .tablet-pull-75, .tablet-push-80, .tablet-pull-80, .tablet-push-85, .tablet-pull-85, .tablet-push-90, .tablet-pull-90, .tablet-push-95, .tablet-pull-95, .tablet-push-33, .tablet-pull-33, .tablet-push-66, .tablet-pull-66 {
     position: relative;
   }
@@ -1029,7 +1029,7 @@
     width: 100%;
   }
 }
-@media screen and (min-width: 1025px) {
+@media (min-width: 1025px) {
   .push-5, .pull-5, .push-10, .pull-10, .push-15, .pull-15, .push-20, .pull-20, .push-25, .pull-25, .push-30, .pull-30, .push-35, .pull-35, .push-40, .pull-40, .push-45, .pull-45, .push-50, .pull-50, .push-55, .pull-55, .push-60, .pull-60, .push-65, .pull-65, .push-70, .pull-70, .push-75, .pull-75, .push-80, .pull-80, .push-85, .pull-85, .push-90, .pull-90, .push-95, .pull-95, .push-33, .pull-33, .push-66, .pull-66 {
     position: relative;
   }
