@@ -29,6 +29,8 @@ $container-max-width: 1200px !default;
 
 $gutter-half: 10px !default;
 
+$container-gutter: $gutter-half !default;
+
 $lang-forward: left !default;
 
 $lang-reverse: right !default;
@@ -171,9 +173,9 @@ $lang-reverse: right !default;
     }
 
     // Set if gutter is non-zero.
-    @if $gutter-half != 0 {
-      padding-left: $gutter-half;
-      padding-right: $gutter-half;
+    @if $container-gutter != 0 {
+      padding-left: $container-gutter;
+      padding-right: $container-gutter;
     }
   }
 
