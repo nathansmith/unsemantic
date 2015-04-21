@@ -48,11 +48,9 @@ $lang-reverse: right !default;
 // Push
 //
 @mixin ie7-push($decimal) {
-  $decimal: unquote($decimal);
-
   @if $unsemantic-ie7-support {
     /* <IE7> */
-    *#{$lang-forward}: unquote("expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + \"px\")");
+    *#{$lang-forward}: unquote("expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + 'px')");
     /* </IE7> */
   }
 }
@@ -61,11 +59,9 @@ $lang-reverse: right !default;
 // Pull
 //
 @mixin ie7-pull($decimal) {
-  $decimal: unquote($decimal);
-
   @if $unsemantic-ie7-support {
     /* <IE7> */
-    *#{$lang-forward}: unquote("expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + \"px\")");
+    *#{$lang-forward}: unquote("expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + 'px')");
     /* </IE7> */
   }
 }
@@ -74,11 +70,9 @@ $lang-reverse: right !default;
 // Width
 //
 @mixin ie7-width($decimal) {
-  $decimal: unquote($decimal);
-
   @if $unsemantic-ie7-support {
     /* <IE7> */
-    *width: unquote("expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + \"px\")");
+    *width: unquote("expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + 'px')");
     /* </IE7> */
   }
 }
@@ -87,9 +81,7 @@ $lang-reverse: right !default;
 // Faux gutter
 //
 @mixin ie7-margin($margin) {
-  $margin: unquote($margin);
-
-  $val: unquote("expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && \"#{$margin}\")");
+  $val: unquote("expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === 'block' && this.currentStyle.width === 'auto') && '#{$margin}')");
 
   @if $unsemantic-ie7-support {
     // [1] Remove padding, since IE7 doesn't
@@ -117,7 +109,6 @@ $lang-reverse: right !default;
 //----------------------------------------------------------------------------------------------------
 
 @mixin unsemantic-grid-placeholders($_SCOPE: null) {
-  $_SCOPE: unquote($_SCOPE);
   $scope: "";
 
   // Scope: mobile, tablet, or desktop.
@@ -457,7 +448,6 @@ $lang-reverse: right !default;
 //----------------------------------------------------------------------------------------------------
 
 @mixin unsemantic-grid-scoped($_SCOPE: null) {
-  $_SCOPE: unquote($_SCOPE);
   $scope: "";
   $class: "";
 
