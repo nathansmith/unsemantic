@@ -51,8 +51,12 @@ $lang-reverse: right !default;
 //
 @mixin ie7-push($decimal) {
   @if $unsemantic-ie7-support {
+    $str: "expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + 'px')";
+
+    $val: unquote($str);
+
     /* <IE7> */
-    *#{$lang-forward}: unquote("expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + 'px')");
+    *#{$lang-forward}: $val;
     /* </IE7> */
   }
 }
@@ -62,8 +66,12 @@ $lang-reverse: right !default;
 //
 @mixin ie7-pull($decimal) {
   @if $unsemantic-ie7-support {
+    $str: "expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + 'px')";
+
+    $val: unquote($str);
+
     /* <IE7> */
-    *#{$lang-forward}: unquote("expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + 'px')");
+    *#{$lang-forward}: $val;
     /* </IE7> */
   }
 }
@@ -73,8 +81,12 @@ $lang-reverse: right !default;
 //
 @mixin ie7-width($decimal) {
   @if $unsemantic-ie7-support {
+    $str: "expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + 'px')";
+
+    $val: unquote($str);
+
     /* <IE7> */
-    *width: unquote("expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + 'px')");
+    *width: unquote($val);
     /* </IE7> */
   }
 }
@@ -83,7 +95,9 @@ $lang-reverse: right !default;
 // Faux gutter
 //
 @mixin ie7-margin($margin) {
-  $val: unquote("expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === 'block' && this.currentStyle.width === 'auto') && '#{$margin}')");
+  $str: "expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === 'block' && this.currentStyle.width === 'auto') && '#{$margin}')";
+
+  $val: unquote($str);
 
   @if $unsemantic-ie7-support {
     // [1] Remove padding, since IE7 doesn't
