@@ -86,7 +86,7 @@ $lang-reverse: right !default;
     $val: unquote($str);
 
     /* <IE7> */
-    *width: unquote($val);
+    *width: $val;
     /* </IE7> */
   }
 }
