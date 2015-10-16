@@ -219,6 +219,13 @@ $lang-reverse: right !default;
     padding-right: 0;
   }
 
+  // Offset the left/right margin of an
+  // element that contains grid units.
+  %#{$scope}grid-offset {
+    margin-left: -1 * $gutter-half;
+    margin-right: -1 * $gutter-half;
+  }
+
   // Allow column swapping?
   @if $unsemantic-push-pull-support {
     // Allows columns to be offset +/- left.
@@ -389,6 +396,12 @@ $lang-reverse: right !default;
   .grid-parent {
     @extend %grid-parent;
   }
+
+  // Offset the left/right margin of an
+  // element that contains grid units.
+  .grid-offset {
+    @extend %grid-offset;
+  }
 }
 
 // `Consume placeholders at global scope. For: mobile, tablet, destkop.
@@ -457,6 +470,12 @@ $lang-reverse: right !default;
   // as a parent for other grid columns.
   .grid-parent {
     @extend %grid-parent;
+  }
+
+  // Offset the left/right margin of an
+  // element that contains grid units.
+  .grid-offset {
+    @extend %grid-offset;
   }
 }
 

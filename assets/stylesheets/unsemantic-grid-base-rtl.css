@@ -109,3 +109,8 @@
   padding-left: 0;
   padding-right: 0;
 }
+
+.grid-offset {
+  margin-left: -10px;
+  margin-right: -10px;
+}
