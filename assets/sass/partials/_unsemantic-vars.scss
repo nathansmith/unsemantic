@@ -222,8 +222,12 @@ $lang-reverse: right !default;
   // Offset the left/right margin of an
   // element that contains grid units.
   %#{$scope}grid-offset {
-    margin-left: -1 * $gutter-half;
-    margin-right: -1 * $gutter-half;
+    @extend %#{$scope}clearfix;
+
+    @if $gutter-half != 0 {
+      margin-left: -1 * $gutter-half;
+      margin-right: -1 * $gutter-half;
+    }
   }
 
   // Allow column swapping?
