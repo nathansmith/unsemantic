@@ -2,7 +2,7 @@
   "name": "unsemantic",
   "version": "1.0.1",
   "description": "Fluid grid for mobile, tablet, and desktop.",
-  "main": "assets/stylesheets/unsemantic-grid-responsive-no-ie7.css",
+  "main": "assets/stylesheets/unsemantic-grid-responsive-tablet-no-ie7.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
