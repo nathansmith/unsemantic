@@ -9,7 +9,7 @@ $media-desktop-min: 768px !default;
 @import "unsemantic-ie-snap";
 
 @include unsemantic-grid-placeholders;
-@include unsemantic-grid-base;
+@include unsemantic-grid-base(mobile, desktop);
 
 @media (max-width: $media-mobile-max) {
   @include unsemantic-grid-placeholders(mobile);

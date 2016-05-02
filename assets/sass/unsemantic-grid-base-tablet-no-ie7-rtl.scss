@@ -11,4 +11,4 @@ $lang-reverse: left;
 @import "partials/unsemantic-ie-snap";
 
 @include unsemantic-grid-placeholders;
-@include unsemantic-grid-base-tablet;
+@include unsemantic-grid-base(mobile, tablet, desktop);

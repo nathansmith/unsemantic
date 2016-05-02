@@ -8,7 +8,7 @@ $lang-reverse: left;
 @import "partials/unsemantic-vars";
 
 @include unsemantic-grid-placeholders;
-@include unsemantic-grid-base;
+@include unsemantic-grid-base(desktop);
 
 @include unsemantic-grid-placeholders(desktop);
 @include unsemantic-grid-scoped(desktop);

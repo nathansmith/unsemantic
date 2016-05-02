@@ -127,8 +127,8 @@ $lang-reverse: right !default;
 @mixin unsemantic-grid-placeholders($_SCOPE: null) {
   $scope: "";
 
-  // Scope: mobile, tablet, or desktop.
-  @if $_SCOPE != null {
+  // Set if it exists.
+  @if $_SCOPE {
     $scope: #{$_SCOPE + "-"};
   }
 
@@ -182,12 +182,13 @@ $lang-reverse: right !default;
     margin-left: auto;
     margin-right: auto;
 
-    @if $container-max-width != none {
+    // Set if it exists.
+    @if $container-max-width {
       max-width: $container-max-width;
     }
 
-    // Set if gutter is non-zero.
-    @if $container-gutter != 0 {
+    // Set if it exists.
+    @if $container-gutter {
       padding-left: $container-gutter;
       padding-right: $container-gutter;
     }
@@ -204,8 +205,8 @@ $lang-reverse: right !default;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 
-    // Set if gutter is non-zero.
-    @if $gutter-half != 0 {
+    // Set if it exists.
+    @if $gutter-half {
       padding-left: $gutter-half;
       padding-right: $gutter-half;
       @include ie7-margin($gutter-half);
@@ -223,8 +224,10 @@ $lang-reverse: right !default;
   // element that contains grid units.
   %#{$scope}grid-offset {
     @extend %#{$scope}clearfix;
+    clear: both;
 
-    @if $gutter-half != 0 {
+    // Set if it exists.
+    @if $gutter-half {
       margin-left: -1 * $gutter-half;
       margin-right: -1 * $gutter-half;
     }
@@ -341,10 +344,10 @@ $lang-reverse: right !default;
   }
 }
 
-// `Consume placeholders at global scope. For: mobile, destkop.
+// `Consume global placeholders. For: mobile, tablet, destkop, etc.
 //----------------------------------------------------------------------------------------------------
 
-@mixin unsemantic-grid-base {
+@mixin unsemantic-grid-base($_LIST...) {
   // ===========
   // `Container.
   // ===========
@@ -365,35 +368,9 @@ $lang-reverse: right !default;
     @extend %clearfix;
   }
 
-  // ==============
-  // `Grid columns.
-  // ==============
-
-  // For 5 through 100 percent.
-  @for $i from 1 through 20 {
-    $num: $i * 5;
-
-    .grid-#{$num} {
-      @extend %grid-columns-all;
-    }
-
-    .mobile-grid-#{$num} {
-      @extend %grid-columns-all;
-    }
-  }
-
-  // For one-third and two-thirds.
-  @for $i from 1 through 2 {
-    $num: $i * 33;
-
-    .grid-#{$num} {
-      @extend %grid-columns-all;
-    }
-
-    .mobile-grid-#{$num} {
-      @extend %grid-columns-all;
-    }
-  }
+  // =============================
+  // `Parent and offset overrides.
+  // =============================
 
   // Remove padding, if it's being used
   // as a parent for other grid columns.
@@ -406,80 +383,38 @@ $lang-reverse: right !default;
   .grid-offset {
     @extend %grid-offset;
   }
-}
-
-// `Consume placeholders at global scope. For: mobile, tablet, destkop.
-//----------------------------------------------------------------------------------------------------
-
-@mixin unsemantic-grid-base-tablet {
-  // ===========
-  // `Container.
-  // ===========
-
-  .grid-container {
-    @extend %grid-container;
-  }
-
-  // ========================
-  // `Clear floated elements.
-  // ========================
-
-  .clear {
-    @extend %clear;
-  }
-
-  .clearfix {
-    @extend %clearfix;
-  }
 
   // ==============
   // `Grid columns.
   // ==============
 
-  // For 5 through 100 percent.
-  @for $i from 1 through 20 {
-    $num: $i * 5;
+  @if type-of($_LIST) == arglist {
+    @each $_SCOPE in $_LIST {
+      $class: "";
 
-    .grid-#{$num} {
-      @extend %grid-columns-all;
+      // Class prefix.
+      @if $_SCOPE and $_SCOPE != desktop {
+        $class: #{$_SCOPE + "-"};
+      }
+
+      // For 5 through 100 percent.
+      @for $i from 1 through 20 {
+        $num: $i * 5;
+
+        .#{$class}grid-#{$num} {
+          @extend %grid-columns-all;
+        }
+      }
+
+      // For one-third and two-thirds.
+      @for $i from 1 through 2 {
+        $num: $i * 33;
+
+        .#{$class}grid-#{$num} {
+          @extend %grid-columns-all;
+        }
+      }
     }
-
-    .mobile-grid-#{$num} {
-      @extend %grid-columns-all;
-    }
-
-    .tablet-grid-#{$num} {
-      @extend %grid-columns-all;
-    }
-  }
-
-  // For one-third and two-thirds.
-  @for $i from 1 through 2 {
-    $num: $i * 33;
-
-    .grid-#{$num} {
-      @extend %grid-columns-all;
-    }
-
-    .mobile-grid-#{$num} {
-      @extend %grid-columns-all;
-    }
-
-    .tablet-grid-#{$num} {
-      @extend %grid-columns-all;
-    }
-  }
-
-  // Remove padding, if it's being used
-  // as a parent for other grid columns.
-  .grid-parent {
-    @extend %grid-parent;
-  }
-
-  // Offset the left/right margin of an
-  // element that contains grid units.
-  .grid-offset {
-    @extend %grid-offset;
   }
 }
 
@@ -490,13 +425,13 @@ $lang-reverse: right !default;
   $scope: "";
   $class: "";
 
-  // Scope: mobile, tablet, or desktop.
-  @if $_SCOPE != null {
+  // Set if it exists.
+  @if $_SCOPE {
     $scope: #{$_SCOPE + "-"};
   }
 
   // Class prefix.
-  @if $_SCOPE != null and $_SCOPE != desktop {
+  @if $_SCOPE and $_SCOPE != desktop {
     $class: #{$_SCOPE + "-"};
   }
 
