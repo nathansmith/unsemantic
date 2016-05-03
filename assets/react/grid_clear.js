@@ -17,9 +17,9 @@ var GridClear = React.createClass({
 
   // Render method.
   render: function () {
-    const desktop_hide = this.props['desktop-hide']
-    const mobile_hide = this.props['mobile-hide']
-    const tablet_hide = this.props['tablet-hide']
+    const desktopHide = this.props['desktop-hide']
+    const mobileHide = this.props['mobile-hide']
+    const tabletHide = this.props['tablet-hide']
 
     // Populated later.
     var className = [
@@ -32,7 +32,7 @@ var GridClear = React.createClass({
       ====================
     */
 
-    if (desktop_hide) {
+    if (desktopHide) {
       className.push('hide-on-desktop')
     }
 
@@ -42,7 +42,7 @@ var GridClear = React.createClass({
       ===================
     */
 
-    if (mobile_hide) {
+    if (mobileHide) {
       className.push('hide-on-mobile')
     }
 
@@ -52,7 +52,7 @@ var GridClear = React.createClass({
       ===================
     */
 
-    if (tablet_hide) {
+    if (tabletHide) {
       className.push('hide-on-tablet')
     }
 

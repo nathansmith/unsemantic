@@ -41,25 +41,25 @@ var Grid = React.createClass({
     const parent = this.props.parent
 
     const desktop = this.props.desktop
-    const desktop_hide = this.props['desktop-hide']
-    const desktop_push = this.props['desktop-push']
-    const desktop_pull = this.props['desktop-pull']
-    const desktop_prefix = this.props['desktop-prefix']
-    const desktop_suffix = this.props['desktop-suffix']
+    const desktopHide = this.props['desktop-hide']
+    const desktopPush = this.props['desktop-push']
+    const desktopPull = this.props['desktop-pull']
+    const desktopPrefix = this.props['desktop-prefix']
+    const desktopSuffix = this.props['desktop-suffix']
 
     const mobile = this.props.mobile
-    const mobile_hide = this.props['mobile-hide']
-    const mobile_push = this.props['mobile-push']
-    const mobile_pull = this.props['mobile-pull']
-    const mobile_prefix = this.props['mobile-prefix']
-    const mobile_suffix = this.props['mobile-suffix']
+    const mobileHide = this.props['mobile-hide']
+    const mobilePush = this.props['mobile-push']
+    const mobilePull = this.props['mobile-pull']
+    const mobilePrefix = this.props['mobile-prefix']
+    const mobileSuffix = this.props['mobile-suffix']
 
     const tablet = this.props.tablet
-    const tablet_hide = this.props['tablet-hide']
-    const tablet_push = this.props['tablet-push']
-    const tablet_pull = this.props['tablet-pull']
-    const tablet_prefix = this.props['tablet-prefix']
-    const tablet_suffix = this.props['tablet-suffix']
+    const tabletHide = this.props['tablet-hide']
+    const tabletPush = this.props['tablet-push']
+    const tabletPull = this.props['tablet-pull']
+    const tabletPrefix = this.props['tablet-prefix']
+    const tabletSuffix = this.props['tablet-suffix']
 
     // Populated later.
     var className = []
@@ -84,24 +84,24 @@ var Grid = React.createClass({
       className.push('grid-' + desktop)
     }
 
-    if (desktop_hide) {
+    if (desktopHide) {
       className.push('hide-on-desktop')
     }
 
-    if (desktop_push) {
-      className.push('push-' + desktop_push)
+    if (desktopPush) {
+      className.push('push-' + desktopPush)
     }
 
-    if (desktop_pull) {
-      className.push('pull-' + desktop_pull)
+    if (desktopPull) {
+      className.push('pull-' + desktopPull)
     }
 
-    if (desktop_prefix) {
-      className.push('prefix-' + desktop_prefix)
+    if (desktopPrefix) {
+      className.push('prefix-' + desktopPrefix)
     }
 
-    if (desktop_suffix) {
-      className.push('suffix-' + desktop_suffix)
+    if (desktopSuffix) {
+      className.push('suffix-' + desktopSuffix)
     }
 
     /*
@@ -114,24 +114,24 @@ var Grid = React.createClass({
       className.push('mobile-grid-' + mobile)
     }
 
-    if (mobile_hide) {
+    if (mobileHide) {
       className.push('hide-on-mobile')
     }
 
-    if (mobile_push) {
-      className.push('mobile-push-' + mobile_push)
+    if (mobilePush) {
+      className.push('mobile-push-' + mobilePush)
     }
 
-    if (mobile_pull) {
-      className.push('mobile-pull-' + mobile_pull)
+    if (mobilePull) {
+      className.push('mobile-pull-' + mobilePull)
     }
 
-    if (mobile_prefix) {
-      className.push('mobile-prefix-' + mobile_prefix)
+    if (mobilePrefix) {
+      className.push('mobile-prefix-' + mobilePrefix)
     }
 
-    if (mobile_suffix) {
-      className.push('mobile-suffix-' + mobile_suffix)
+    if (mobileSuffix) {
+      className.push('mobile-suffix-' + mobileSuffix)
     }
 
     /*
@@ -144,24 +144,24 @@ var Grid = React.createClass({
       className.push('tablet-grid-' + tablet)
     }
 
-    if (tablet_hide) {
+    if (tabletHide) {
       className.push('hide-on-tablet')
     }
 
-    if (tablet_push) {
-      className.push('tablet-push-' + tablet_push)
+    if (tabletPush) {
+      className.push('tablet-push-' + tabletPush)
     }
 
-    if (tablet_pull) {
-      className.push('tablet-pull-' + tablet_pull)
+    if (tabletPull) {
+      className.push('tablet-pull-' + tabletPull)
     }
 
-    if (tablet_prefix) {
-      className.push('tablet-prefix-' + tablet_prefix)
+    if (tabletPrefix) {
+      className.push('tablet-prefix-' + tabletPrefix)
     }
 
-    if (tablet_suffix) {
-      className.push('tablet-suffix-' + tablet_suffix)
+    if (tabletSuffix) {
+      className.push('tablet-suffix-' + tabletSuffix)
     }
 
     /*
