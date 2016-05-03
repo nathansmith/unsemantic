@@ -14,7 +14,7 @@ var GridContainer = React.createClass({
   },
 
   // Render method.
-  render () {
+  render: function () {
     // Expose UI.
     return React.createElement(
       'div',
