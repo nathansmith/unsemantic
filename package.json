@@ -2,7 +2,6 @@
   "name": "unsemantic",
   "version": "1.1.2",
   "description": "Fluid grid for mobile, tablet, and desktop.",
-  "main": "./assets/react/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
