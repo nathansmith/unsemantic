@@ -4,27 +4,45 @@ require
 */
 
 // Dependencies.
-var React = require('react')
+var React = require('react');
+var CreateClass = require('create-react-class');
+var PropTypes = require('prop-types');
 
 // Define class.
-var GridContainer = React.createClass({
+var GridContainer = CreateClass({
   // Validation.
   propTypes: {
-    children: React.PropTypes.node
+    children: PropTypes.node,
+
+    /*Custom classes*/
+    customClass: PropTypes.string
   },
 
   // Render method.
   render: function () {
+
+    var customClass = this.props.customClass;
+    // Populated later.
+    var className = [];
+
+    className.push('grid-container');
+
+    if(customClass) {
+      className.push(' ' + customClass);
+    }
+
+    className = className.join(' ');
+
     // Expose UI.
     return React.createElement(
       'div',
       {
-        className: 'grid-container'
+        className: className
       },
       this.props.children
-    )
+    );
   }
-})
+});
 
 // Export.
-module.exports = GridContainer
+module.exports = GridContainer;

@@ -4,13 +4,16 @@ require
 */
 
 // Dependencies.
-var React = require('react')
+var React = require('react');
+var CreateClass = require('create-react-class');
+var PropTypes = require('prop-types');
+
 
 // Define class.
-var GridOffset = React.createClass({
+var GridOffset = CreateClass({
   // Validation.
   propTypes: {
-    children: React.PropTypes.node
+    children: PropTypes.node
   },
 
   // Render method.
@@ -22,9 +25,9 @@ var GridOffset = React.createClass({
         className: 'grid-offset'
       },
       this.props.children
-    )
+    );
   }
-})
+});
 
 // Export.
-module.exports = GridOffset
+module.exports = GridOffset;
