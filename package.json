@@ -20,6 +20,10 @@
   ],
   "author": "Nathan Smith",
   "license": "MIT",
+  "dependencies": {
+    "create-react-class": "^15.5.3",
+    "prop-types": "^15.5.10"
+  },
   "bugs": {
     "url": "https://github.com/nathansmith/unsemantic/issues"
   },
