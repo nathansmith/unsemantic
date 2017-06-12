@@ -4,27 +4,29 @@ require
 */
 
 // Dependencies.
-var React = require('react')
+var React = require('react');
+var PropTypes = require('prop-types');
+var CreateClass = require('create-react-class');
 
 // Define class.
-var GridClear = React.createClass({
+var GridClear = CreateClass({
   // Validation.
   propTypes: {
-    'desktop-hide': React.PropTypes.bool,
-    'mobile-hide': React.PropTypes.bool,
-    'tablet-hide': React.PropTypes.bool
+    'desktop-hide': PropTypes.bool,
+    'mobile-hide': PropTypes.bool,
+    'tablet-hide': PropTypes.bool
   },
 
   // Render method.
   render: function () {
-    const desktopHide = this.props['desktop-hide']
-    const mobileHide = this.props['mobile-hide']
-    const tabletHide = this.props['tablet-hide']
+    const desktopHide = this.props['desktop-hide'];
+    const mobileHide = this.props['mobile-hide'];
+    const tabletHide = this.props['tablet-hide'];
 
     // Populated later.
     var className = [
       'clear'
-    ]
+    ];
 
     /*
       ====================
@@ -33,7 +35,7 @@ var GridClear = React.createClass({
     */
 
     if (desktopHide) {
-      className.push('hide-on-desktop')
+      className.push('hide-on-desktop');
     }
 
     /*
@@ -43,7 +45,7 @@ var GridClear = React.createClass({
     */
 
     if (mobileHide) {
-      className.push('hide-on-mobile')
+      className.push('hide-on-mobile');
     }
 
     /*
@@ -53,7 +55,7 @@ var GridClear = React.createClass({
     */
 
     if (tabletHide) {
-      className.push('hide-on-tablet')
+      className.push('hide-on-tablet');
     }
 
     /*
@@ -62,7 +64,7 @@ var GridClear = React.createClass({
       =================
     */
 
-    className = className.join(' ')
+    className = className.join(' ');
 
     // Expose UI.
     return React.createElement(
@@ -70,9 +72,9 @@ var GridClear = React.createClass({
       {
         className: className
       }
-    )
+    );
   }
-})
+});
 
 // Export.
-module.exports = GridClear
+module.exports = GridClear;
