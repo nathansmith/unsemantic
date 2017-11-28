@@ -1,8 +1,3 @@
-/*global
-exports,
-require
-*/
-
 /*
   // This file exists for use with NPM and React.
   // It is not meant to be loaded into a browser.
@@ -12,10 +7,14 @@ require
   import { Grid, GridContainer } from 'unsemantic'
 */
 
-exports.Grid = require('./assets/react/grid')
+// Import.
+import Grid from './assets/react/grid'
+import GridClear from './assets/react/grid_clear'
+import GridContainer from './assets/react/grid_container'
+import GridOffset from './assets/react/grid_offset'
 
-exports.GridClear = require('./assets/react/grid_clear')
-
-exports.GridContainer = require('./assets/react/grid_container')
-
-exports.GridOffset = require('./assets/react/grid_offset')
+// Export.
+export { Grid }
+export { GridClear }
+export { GridContainer }
+export { GridOffset }
