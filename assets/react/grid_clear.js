@@ -1,28 +1,17 @@
-/*global
-module,
-require
-*/
-
 // Dependencies.
-var React = require('react')
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // Define class.
-var GridClear = React.createClass({
-  // Validation.
-  propTypes: {
-    'desktop-hide': React.PropTypes.bool,
-    'mobile-hide': React.PropTypes.bool,
-    'tablet-hide': React.PropTypes.bool
-  },
-
+class GridClear extends React.Component {
   // Render method.
-  render: function () {
+  render () {
     const desktopHide = this.props['desktop-hide']
     const mobileHide = this.props['mobile-hide']
     const tabletHide = this.props['tablet-hide']
 
     // Populated later.
-    var className = [
+    let className = [
       'clear'
     ]
 
@@ -65,14 +54,18 @@ var GridClear = React.createClass({
     className = className.join(' ')
 
     // Expose UI.
-    return React.createElement(
-      'span',
-      {
-        className: className
-      }
+    return (
+      <span className={className} />
     )
   }
-})
+}
+
+// Validation.
+GridClear.propTypes = {
+  'desktop-hide': PropTypes.bool,
+  'mobile-hide': PropTypes.bool,
+  'tablet-hide': PropTypes.bool
+}
 
 // Export.
-module.exports = GridClear
+export default GridClear
