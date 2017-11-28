@@ -1,30 +1,24 @@
-/*global
-module,
-require
-*/
-
 // Dependencies.
-var React = require('react')
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // Define class.
-var GridContainer = React.createClass({
-  // Validation.
-  propTypes: {
-    children: React.PropTypes.node
-  },
-
+class GridContainer extends React.Component {
   // Render method.
-  render: function () {
+  render () {
     // Expose UI.
-    return React.createElement(
-      'div',
-      {
-        className: 'grid-container'
-      },
-      this.props.children
+    return (
+      <div className='grid-container'>
+        {this.props.children}
+      </div>
     )
   }
-})
+}
+
+// Validation.
+GridContainer.propTypes = {
+  children: PropTypes.node
+}
 
 // Export.
-module.exports = GridContainer
+export default GridContainer
