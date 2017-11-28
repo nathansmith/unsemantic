@@ -1,43 +1,11 @@
-/*global
-module,
-require
-*/
-
 // Dependencies.
-var React = require('react')
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // Define class.
-var Grid = React.createClass({
-  // Validation
-  propTypes: {
-    children: React.PropTypes.node,
-
-    parent: React.PropTypes.bool,
-
-    desktop: React.PropTypes.string,
-    'desktop-hide': React.PropTypes.bool,
-    'desktop-push': React.PropTypes.string,
-    'desktop-pull': React.PropTypes.string,
-    'desktop-prefix': React.PropTypes.string,
-    'desktop-suffix': React.PropTypes.string,
-
-    mobile: React.PropTypes.string,
-    'mobile-hide': React.PropTypes.bool,
-    'mobile-push': React.PropTypes.string,
-    'mobile-pull': React.PropTypes.string,
-    'mobile-prefix': React.PropTypes.string,
-    'mobile-suffix': React.PropTypes.string,
-
-    tablet: React.PropTypes.string,
-    'tablet-hide': React.PropTypes.bool,
-    'tablet-push': React.PropTypes.string,
-    'tablet-pull': React.PropTypes.string,
-    'tablet-prefix': React.PropTypes.string,
-    'tablet-suffix': React.PropTypes.string
-  },
-
+class Grid extends React.Component {
   // Render method.
-  render: function () {
+  render () {
     const parent = this.props.parent
 
     const desktop = this.props.desktop
@@ -62,7 +30,7 @@ var Grid = React.createClass({
     const tabletSuffix = this.props['tablet-suffix']
 
     // Populated later.
-    var className = []
+    let className = []
 
     /*
       ===================
@@ -173,15 +141,41 @@ var Grid = React.createClass({
     className = className.join(' ')
 
     // Expose UI.
-    return React.createElement(
-      'div',
-      {
-        className: className
-      },
-      this.props.children
+    return (
+      <div className={className}>
+        {this.props.children}
+      </div>
     )
   }
-})
+}
+
+// Validation
+Grid.propTypes = {
+  children: PropTypes.node,
+
+  parent: PropTypes.bool,
+
+  desktop: PropTypes.string,
+  'desktop-hide': PropTypes.bool,
+  'desktop-push': PropTypes.string,
+  'desktop-pull': PropTypes.string,
+  'desktop-prefix': PropTypes.string,
+  'desktop-suffix': PropTypes.string,
+
+  mobile: PropTypes.string,
+  'mobile-hide': PropTypes.bool,
+  'mobile-push': PropTypes.string,
+  'mobile-pull': PropTypes.string,
+  'mobile-prefix': PropTypes.string,
+  'mobile-suffix': PropTypes.string,
+
+  tablet: PropTypes.string,
+  'tablet-hide': PropTypes.bool,
+  'tablet-push': PropTypes.string,
+  'tablet-pull': PropTypes.string,
+  'tablet-prefix': PropTypes.string,
+  'tablet-suffix': PropTypes.string
+}
 
 // Export.
-module.exports = Grid
+export default Grid
