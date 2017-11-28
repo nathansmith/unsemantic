@@ -8,10 +8,10 @@
 */
 
 // Import.
-import Grid from './assets/react/grid'
-import GridClear from './assets/react/grid_clear'
-import GridContainer from './assets/react/grid_container'
-import GridOffset from './assets/react/grid_offset'
+import Grid from './grid'
+import GridClear from './grid_clear'
+import GridContainer from './grid_container'
+import GridOffset from './grid_offset'
 
 // Export.
 export { Grid }

@@ -6,8 +6,15 @@
     "prop-types": "^15.5.10",
     "react": "^15.5.10"
   },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "rimraf": "^2.6.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf lib",
+    "compile": "npm run clean && babel assets/react -d lib"
   },
   "repository": {
     "type": "git",
@@ -27,5 +34,6 @@
   "bugs": {
     "url": "https://github.com/nathansmith/unsemantic/issues"
   },
-  "homepage": "https://github.com/nathansmith/unsemantic#readme"
+  "homepage": "https://github.com/nathansmith/unsemantic#readme",
+  "main": "lib/index.js"
 }
