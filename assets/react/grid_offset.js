@@ -1,30 +1,24 @@
-/*global
-module,
-require
-*/
-
 // Dependencies.
-var React = require('react')
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // Define class.
-var GridOffset = React.createClass({
-  // Validation.
-  propTypes: {
-    children: React.PropTypes.node
-  },
-
+class GridOffset extends React.Component {
   // Render method.
-  render: function () {
+  render () {
     // Expose UI.
-    return React.createElement(
-      'div',
-      {
-        className: 'grid-offset'
-      },
-      this.props.children
+    return (
+      <div className='grid-offset'>
+        {this.props.children}
+      </div>
     )
   }
-})
+}
+
+// Validation.
+GridOffset.propTypes = {
+  children: PropTypes.node
+}
 
 // Export.
-module.exports = GridOffset
+export default GridOffset
