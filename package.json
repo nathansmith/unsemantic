@@ -1,6 +1,6 @@
 {
   "name": "unsemantic",
-  "main": "react/assets/dist/index.js",
+  "main": "assets/react/dist/index.js",
   "version": "1.2.1",
   "description": "Fluid grid for mobile, tablet, and desktop.",
   "dependencies": {
