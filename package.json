@@ -1,7 +1,7 @@
 {
   "name": "unsemantic",
   "main": "assets/react/dist/index.js",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Fluid grid for mobile, tablet, and desktop.",
   "dependencies": {
     "prop-types": "^15.5.10",
