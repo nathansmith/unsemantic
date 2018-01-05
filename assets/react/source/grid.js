@@ -30,7 +30,7 @@ class Grid extends React.Component {
     const tabletSuffix = this.props['tablet-suffix']
 
     // Populated later.
-    let className = []
+    let className = [this.props.className]
 
     /*
       ===================
@@ -138,7 +138,12 @@ class Grid extends React.Component {
       =================
     */
 
-    className = className.join(' ')
+    className = (
+      className
+      .join(' ')
+      .trim()
+      .replace(/\s+/g, ' ')
+    )
 
     // Expose UI.
     return (
@@ -152,7 +157,7 @@ class Grid extends React.Component {
 // Validation
 Grid.propTypes = {
   children: PropTypes.node,
-
+  className: PropTypes.string,
   parent: PropTypes.bool,
 
   desktop: PropTypes.string,

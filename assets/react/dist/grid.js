@@ -62,7 +62,7 @@ var Grid = function (_React$Component) {
       var tabletSuffix = this.props['tablet-suffix'];
 
       // Populated later.
-      var className = [];
+      var className = [this.props.className];
 
       /*
         ===================
@@ -170,7 +170,7 @@ var Grid = function (_React$Component) {
         =================
       */
 
-      className = className.join(' ');
+      className = className.join(' ').trim().replace(/\s+/g, ' ');
 
       // Expose UI.
       return _react2.default.createElement(
@@ -189,7 +189,7 @@ var Grid = function (_React$Component) {
 
 Grid.propTypes = {
   children: _propTypes2.default.node,
-
+  className: _propTypes2.default.string,
   parent: _propTypes2.default.bool,
 
   desktop: _propTypes2.default.string,
