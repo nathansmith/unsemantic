@@ -29,6 +29,8 @@ class Grid extends React.Component {
     const tabletPrefix = this.props['tablet-prefix']
     const tabletSuffix = this.props['tablet-suffix']
 
+    const customClassName = this.props['className']
+
     // Populated later.
     let className = [this.props.className]
 
@@ -130,6 +132,10 @@ class Grid extends React.Component {
 
     if (tabletSuffix) {
       className.push('tablet-suffix-' + tabletSuffix)
+    }
+
+    if (customClassName) {
+      className.push(customClassName)
     }
 
     /*
