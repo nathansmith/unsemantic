@@ -344,7 +344,7 @@ $lang-reverse: right !default;
   }
 }
 
-// `Consume global placeholders. For: mobile, tablet, destkop, etc.
+// `Consume global placeholders. For: mobile, tablet, desktop, etc.
 //----------------------------------------------------------------------------------------------------
 
 @mixin unsemantic-grid-base($_LIST...) {
